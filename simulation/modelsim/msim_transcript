@@ -1,0 +1,533 @@
+# ERROR: No extended dataflow license exists
+# do ReactionGame_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Modifying /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini
+# 
+# vcom -93 -work work {/home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:23:26 on Apr 20,2018
+# vcom -reportprogress 300 -93 -work work /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package lab
+# -- Loading package lab
+# -- Compiling entity D_FF
+# -- Compiling architecture WhatDoYouCare of D_FF
+# -- Compiling entity dbtwo
+# -- Compiling architecture struct of dbtwo
+# -- Compiling entity oneclock
+# -- Compiling architecture struct of oneclock
+# -- Compiling entity Debouncer
+# -- Compiling architecture cs of Debouncer
+# -- Compiling entity CounterCheck
+# -- Compiling architecture Check of CounterCheck
+# -- Compiling entity DelayAdder
+# -- Compiling architecture behave of DelayAdder
+# -- Compiling entity ElevenBitAdder
+# -- Compiling architecture behave of ElevenBitAdder
+# -- Compiling entity OneBitAdd
+# -- Compiling architecture oneadd of OneBitAdd
+# -- Compiling entity lfsr
+# -- Compiling architecture struct of lfsr
+# -- Compiling entity ledfsm
+# -- Compiling architecture struct of ledfsm
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Game
+# -- Compiling architecture behave of Game
+# -- Compiling entity GameOverFSM
+# -- Compiling architecture gameisover of GameOverFSM
+# -- Compiling entity SamplerOutput
+# -- Compiling architecture sampler of SamplerOutput
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity lcd_controller
+# -- Compiling architecture Behavioral of lcd_controller
+# -- Compiling entity ReactionGame
+# -- Compiling architecture final of ReactionGame
+# ** Error: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd(637): (vcom-1436) Actual expression (indexed name) of formal "write_data" is not globally static.
+# ** Error: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd(679): VHDL Compiler exiting
+# End time: 21:23:26 on Apr 20,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro ./ReactionGame_run_msim_rtl_vhdl.do line 8
+# /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {/home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd}"
+vsim -i -l msim_transcript -do ReactionGame_run_msim_rtl_vhdl.do work.lfsr
+# vsim -i -l msim_transcript -do "ReactionGame_run_msim_rtl_vhdl.do" work.lfsr 
+# Start time: 21:23:51 on Apr 20,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.lab
+# Loading work.lfsr(struct)
+# Loading work.d_ff(whatdoyoucare)
+# do ReactionGame_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Modifying /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini
+# 
+# vcom -93 -work work {/home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:23:54 on Apr 20,2018
+# vcom -reportprogress 300 -93 -work work /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package lab
+# -- Loading package lab
+# -- Compiling entity D_FF
+# -- Compiling architecture WhatDoYouCare of D_FF
+# -- Compiling entity dbtwo
+# -- Compiling architecture struct of dbtwo
+# -- Compiling entity oneclock
+# -- Compiling architecture struct of oneclock
+# -- Compiling entity Debouncer
+# -- Compiling architecture cs of Debouncer
+# -- Compiling entity CounterCheck
+# -- Compiling architecture Check of CounterCheck
+# -- Compiling entity DelayAdder
+# -- Compiling architecture behave of DelayAdder
+# -- Compiling entity ElevenBitAdder
+# -- Compiling architecture behave of ElevenBitAdder
+# -- Compiling entity OneBitAdd
+# -- Compiling architecture oneadd of OneBitAdd
+# -- Compiling entity lfsr
+# -- Compiling architecture struct of lfsr
+# -- Compiling entity ledfsm
+# -- Compiling architecture struct of ledfsm
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Game
+# -- Compiling architecture behave of Game
+# -- Compiling entity GameOverFSM
+# -- Compiling architecture gameisover of GameOverFSM
+# -- Compiling entity SamplerOutput
+# -- Compiling architecture sampler of SamplerOutput
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity lcd_controller
+# -- Compiling architecture Behavioral of lcd_controller
+# -- Compiling entity ReactionGame
+# -- Compiling architecture final of ReactionGame
+# ** Error: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd(637): (vcom-1436) Actual expression (indexed name) of formal "write_data" is not globally static.
+# ** Error: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd(679): VHDL Compiler exiting
+# End time: 21:23:54 on Apr 20,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro ./ReactionGame_run_msim_rtl_vhdl.do line 8
+# /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {/home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd}"
+add wave -position insertpoint  \
+sim:/lfsr/clk \
+sim:/lfsr/nq \
+sim:/lfsr/pwreset
+force -freeze sim:/lfsr/pwreset 1 0
+force -freeze sim:/lfsr/clk 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/lfsr/pwreset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vsim -i -l msim_transcript -do ReactionGame_run_msim_rtl_vhdl.do work.delayadder
+# End time: 21:26:05 on Apr 20,2018, Elapsed time: 0:02:14
+# Errors: 5, Warnings: 0
+# vsim -i -l msim_transcript -do "ReactionGame_run_msim_rtl_vhdl.do" work.delayadder 
+# Start time: 21:26:05 on Apr 20,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.lab
+# Loading work.delayadder(behave)
+# Loading work.d_ff(whatdoyoucare)
+# Loading work.elevenbitadder(behave)
+# Loading work.onebitadd(oneadd)
+# WARNING: No extended dataflow license exists
+# do ReactionGame_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Modifying /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini
+# 
+# vcom -93 -work work {/home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:26:06 on Apr 20,2018
+# vcom -reportprogress 300 -93 -work work /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package lab
+# -- Loading package lab
+# -- Compiling entity D_FF
+# -- Compiling architecture WhatDoYouCare of D_FF
+# -- Compiling entity dbtwo
+# -- Compiling architecture struct of dbtwo
+# -- Compiling entity oneclock
+# -- Compiling architecture struct of oneclock
+# -- Compiling entity Debouncer
+# -- Compiling architecture cs of Debouncer
+# -- Compiling entity CounterCheck
+# -- Compiling architecture Check of CounterCheck
+# -- Compiling entity DelayAdder
+# -- Compiling architecture behave of DelayAdder
+# -- Compiling entity ElevenBitAdder
+# -- Compiling architecture behave of ElevenBitAdder
+# -- Compiling entity OneBitAdd
+# -- Compiling architecture oneadd of OneBitAdd
+# -- Compiling entity lfsr
+# -- Compiling architecture struct of lfsr
+# -- Compiling entity ledfsm
+# -- Compiling architecture struct of ledfsm
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Game
+# -- Compiling architecture behave of Game
+# -- Compiling entity GameOverFSM
+# -- Compiling architecture gameisover of GameOverFSM
+# -- Compiling entity SamplerOutput
+# -- Compiling architecture sampler of SamplerOutput
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity lcd_controller
+# -- Compiling architecture Behavioral of lcd_controller
+# -- Compiling entity ReactionGame
+# -- Compiling architecture final of ReactionGame
+# ** Error: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd(637): (vcom-1436) Actual expression (indexed name) of formal "write_data" is not globally static.
+# ** Error: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd(679): VHDL Compiler exiting
+# End time: 21:26:06 on Apr 20,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro ./ReactionGame_run_msim_rtl_vhdl.do line 8
+# /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {/home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd}"
+add wave -position insertpoint  \
+sim:/delayadder/clk \
+sim:/delayadder/reset \
+sim:/delayadder/z
+force -freeze sim:/delayadder/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/delayadder/reset 1 0
+run
+force -freeze sim:/delayadder/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vsim -i -l msim_transcript -do ReactionGame_run_msim_rtl_vhdl.do work.ledfsm
+# End time: 21:27:25 on Apr 20,2018, Elapsed time: 0:01:20
+# Errors: 5, Warnings: 1
+# vsim -i -l msim_transcript -do "ReactionGame_run_msim_rtl_vhdl.do" work.ledfsm 
+# Start time: 21:27:25 on Apr 20,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.lab
+# Loading work.ledfsm(struct)
+# Loading work.d_ff(whatdoyoucare)
+# WARNING: No extended dataflow license exists
+# do ReactionGame_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Modifying /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini
+# 
+# vcom -93 -work work {/home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:27:27 on Apr 20,2018
+# vcom -reportprogress 300 -93 -work work /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package lab
+# -- Loading package lab
+# -- Compiling entity D_FF
+# -- Compiling architecture WhatDoYouCare of D_FF
+# -- Compiling entity dbtwo
+# -- Compiling architecture struct of dbtwo
+# -- Compiling entity oneclock
+# -- Compiling architecture struct of oneclock
+# -- Compiling entity Debouncer
+# -- Compiling architecture cs of Debouncer
+# -- Compiling entity CounterCheck
+# -- Compiling architecture Check of CounterCheck
+# -- Compiling entity DelayAdder
+# -- Compiling architecture behave of DelayAdder
+# -- Compiling entity ElevenBitAdder
+# -- Compiling architecture behave of ElevenBitAdder
+# -- Compiling entity OneBitAdd
+# -- Compiling architecture oneadd of OneBitAdd
+# -- Compiling entity lfsr
+# -- Compiling architecture struct of lfsr
+# -- Compiling entity ledfsm
+# -- Compiling architecture struct of ledfsm
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Game
+# -- Compiling architecture behave of Game
+# -- Compiling entity GameOverFSM
+# -- Compiling architecture gameisover of GameOverFSM
+# -- Compiling entity SamplerOutput
+# -- Compiling architecture sampler of SamplerOutput
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity lcd_controller
+# -- Compiling architecture Behavioral of lcd_controller
+# -- Compiling entity ReactionGame
+# -- Compiling architecture final of ReactionGame
+# ** Error: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd(637): (vcom-1436) Actual expression (indexed name) of formal "write_data" is not globally static.
+# ** Error: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd(679): VHDL Compiler exiting
+# End time: 21:27:27 on Apr 20,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro ./ReactionGame_run_msim_rtl_vhdl.do line 8
+# /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {/home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd}"
+add wave -position insertpoint  \
+sim:/ledfsm/check \
+sim:/ledfsm/clk \
+sim:/ledfsm/led \
+sim:/ledfsm/nq0 \
+sim:/ledfsm/nq1 \
+sim:/ledfsm/q0 \
+sim:/ledfsm/q1 \
+sim:/ledfsm/reset \
+sim:/ledfsm/switch
+force -freeze sim:/ledfsm/reset 1 0
+force -freeze sim:/ledfsm/clk 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/ledfsm/check 0 0
+force -freeze sim:/ledfsm/switch 0 0
+run
+force -freeze sim:/ledfsm/reset 0 0
+run
+run
+run
+force -freeze sim:/ledfsm/check 1 0
+run
+run
+force -freeze sim:/ledfsm/switch 1 0
+force -freeze sim:/ledfsm/check 0 0
+run
+run
+force -freeze sim:/ledfsm/switch 0 0
+run
+run
+vsim -i -l msim_transcript -do ReactionGame_run_msim_rtl_vhdl.do work.game
+# End time: 21:31:33 on Apr 20,2018, Elapsed time: 0:04:08
+# Errors: 5, Warnings: 1
+# vsim -i -l msim_transcript -do "ReactionGame_run_msim_rtl_vhdl.do" work.game 
+# Start time: 21:31:33 on Apr 20,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.lab
+# Loading ieee.numeric_std(body)
+# Loading work.game(behave)
+# Loading work.debouncer(cs)
+# Loading work.d_ff(whatdoyoucare)
+# Loading work.oneclock(struct)
+# Loading work.dbtwo(struct)
+# Loading work.lfsr(struct)
+# Loading work.countercheck(check)
+# Loading work.delayadder(behave)
+# Loading work.elevenbitadder(behave)
+# Loading work.onebitadd(oneadd)
+# Loading work.ledfsm(struct)
+# Loading work.sampleroutput(sampler)
+# Loading work.gameoverfsm(gameisover)
+# WARNING: No extended dataflow license exists
+# do ReactionGame_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Modifying /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini
+# 
+# vcom -93 -work work {/home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:31:34 on Apr 20,2018
+# vcom -reportprogress 300 -93 -work work /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package lab
+# -- Loading package lab
+# -- Compiling entity D_FF
+# -- Compiling architecture WhatDoYouCare of D_FF
+# -- Compiling entity dbtwo
+# -- Compiling architecture struct of dbtwo
+# -- Compiling entity oneclock
+# -- Compiling architecture struct of oneclock
+# -- Compiling entity Debouncer
+# -- Compiling architecture cs of Debouncer
+# -- Compiling entity CounterCheck
+# -- Compiling architecture Check of CounterCheck
+# -- Compiling entity DelayAdder
+# -- Compiling architecture behave of DelayAdder
+# -- Compiling entity ElevenBitAdder
+# -- Compiling architecture behave of ElevenBitAdder
+# -- Compiling entity OneBitAdd
+# -- Compiling architecture oneadd of OneBitAdd
+# -- Compiling entity lfsr
+# -- Compiling architecture struct of lfsr
+# -- Compiling entity ledfsm
+# -- Compiling architecture struct of ledfsm
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Game
+# -- Compiling architecture behave of Game
+# -- Compiling entity GameOverFSM
+# -- Compiling architecture gameisover of GameOverFSM
+# -- Compiling entity SamplerOutput
+# -- Compiling architecture sampler of SamplerOutput
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity lcd_controller
+# -- Compiling architecture Behavioral of lcd_controller
+# -- Compiling entity ReactionGame
+# -- Compiling architecture final of ReactionGame
+# ** Error: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd(637): (vcom-1436) Actual expression (indexed name) of formal "write_data" is not globally static.
+# ** Error: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd(679): VHDL Compiler exiting
+# End time: 21:31:34 on Apr 20,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro ./ReactionGame_run_msim_rtl_vhdl.do line 8
+# /home/dimple/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {/home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd}"
+add wave -position insertpoint  \
+sim:/game/addclock \
+sim:/game/check \
+sim:/game/checkerreset \
+sim:/game/clkin2 \
+sim:/game/curr \
+sim:/game/dd \
+sim:/game/endd \
+sim:/game/gameover \
+sim:/game/go \
+sim:/game/go1 \
+sim:/game/led \
+sim:/game/led1 \
+sim:/game/ledclk \
+sim:/game/ledoutput \
+sim:/game/ledoutput1 \
+sim:/game/masterclock \
+sim:/game/oneeclock \
+sim:/game/pwreset \
+sim:/game/rand \
+sim:/game/rand3 \
+sim:/game/reset \
+sim:/game/reset1 \
+sim:/game/sample \
+sim:/game/switch \
+sim:/game/switch1 \
+sim:/game/switchb \
+sim:/game/temp1 \
+sim:/game/tempv \
+sim:/game/tottime \
+sim:/game/tottime1 \
+sim:/game/tottimeout
+force -freeze sim:/game/pwreset 1 0
+force -freeze sim:/game/switch1 0 0
+force -freeze sim:/game/reset1 1 0
+force -freeze sim:/game/masterclock 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/game/pwreset 0 0
+force -freeze sim:/game/reset1 0 0
+run
+run
+run
+add wave -position insertpoint  \
+sim:/game/addclock \
+sim:/game/check \
+sim:/game/checkerreset \
+sim:/game/clkin2 \
+sim:/game/curr \
+sim:/game/dd \
+sim:/game/endd \
+sim:/game/gameover \
+sim:/game/go \
+sim:/game/go1 \
+sim:/game/led \
+sim:/game/led1 \
+sim:/game/ledclk \
+sim:/game/ledoutput \
+sim:/game/ledoutput1 \
+sim:/game/masterclock \
+sim:/game/oneeclock \
+sim:/game/pwreset \
+sim:/game/rand \
+sim:/game/rand3 \
+sim:/game/reset \
+sim:/game/reset1 \
+sim:/game/sample \
+sim:/game/switch \
+sim:/game/switch1 \
+sim:/game/switchb \
+sim:/game/temp1 \
+sim:/game/tempv \
+sim:/game/tottime \
+sim:/game/tottime1 \
+sim:/game/tottimeout
+# End time: 21:38:47 on Apr 20,2018, Elapsed time: 0:07:14
+# Errors: 5, Warnings: 1
