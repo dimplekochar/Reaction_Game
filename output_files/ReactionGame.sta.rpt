@@ -1,0 +1,961 @@
+TimeQuest Timing Analyzer report for ReactionGame
+Fri Apr 20 21:17:31 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'reset1'
+ 12. Setup: 'masterclock'
+ 13. Hold: 'reset1'
+ 14. Hold: 'masterclock'
+ 15. Recovery: 'masterclock'
+ 16. Recovery: 'reset1'
+ 17. Removal: 'reset1'
+ 18. Removal: 'masterclock'
+ 19. Setup Transfers
+ 20. Hold Transfers
+ 21. Recovery Transfers
+ 22. Removal Transfers
+ 23. Report TCCS
+ 24. Report RSKM
+ 25. Unconstrained Paths Summary
+ 26. Clock Status Summary
+ 27. Unconstrained Input Ports
+ 28. Unconstrained Output Ports
+ 29. Unconstrained Input Ports
+ 30. Unconstrained Output Ports
+ 31. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; ReactionGame                                        ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                   ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+; Clock Name  ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets         ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+; masterclock ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { masterclock } ;
+; reset1      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { reset1 }      ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+
+
++---------------------------------------------------+
+; Fmax Summary                                      ;
++------------+-----------------+-------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name  ; Note ;
++------------+-----------------+-------------+------+
+; 46.66 MHz  ; 46.66 MHz       ; reset1      ;      ;
+; 128.98 MHz ; 128.98 MHz      ; masterclock ;      ;
++------------+-----------------+-------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------+
+; Setup Summary                         ;
++-------------+---------+---------------+
+; Clock       ; Slack   ; End Point TNS ;
++-------------+---------+---------------+
+; reset1      ; -20.433 ; -994.221      ;
+; masterclock ; -13.274 ; -45.129       ;
++-------------+---------+---------------+
+
+
++--------------------------------------+
+; Hold Summary                         ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; reset1      ; -7.851 ; -144.636      ;
+; masterclock ; 1.396  ; 0.000         ;
++-------------+--------+---------------+
+
+
++---------------------------------------+
+; Recovery Summary                      ;
++-------------+---------+---------------+
+; Clock       ; Slack   ; End Point TNS ;
++-------------+---------+---------------+
+; masterclock ; -12.054 ; -35.669       ;
+; reset1      ; -8.441  ; -386.547      ;
++-------------+---------+---------------+
+
+
++--------------------------------------+
+; Removal Summary                      ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; reset1      ; -2.737 ; -56.242       ;
+; masterclock ; 3.509  ; 0.000         ;
++-------------+--------+---------------+
+
+
++--------------------------------------+
+; Minimum Pulse Width Summary          ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; reset1      ; -8.695 ; -1034.499     ;
+; masterclock ; -2.289 ; -2.289        ;
++-------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'reset1'                                                                                                                                                                                       ;
++---------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                                 ; To Node                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -20.433 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 11.652     ;
+; -19.887 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 11.106     ;
+; -19.830 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 11.049     ;
+; -19.753 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:3:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 10.972     ;
+; -19.379 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 10.598     ;
+; -19.356 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 10.575     ;
+; -19.323 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 10.542     ;
+; -19.295 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 10.514     ;
+; -19.284 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 10.503     ;
+; -19.208 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 1.000        ; -9.448     ; 10.427     ;
+; -19.207 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:3:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 10.426     ;
+; -18.833 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 10.052     ;
+; -18.810 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 10.029     ;
+; -18.777 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 9.996      ;
+; -18.749 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 9.968      ;
+; -18.662 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 1.000        ; -9.448     ; 9.881      ;
+; -18.184 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 9.922      ;
+; -18.097 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:1:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 9.316      ;
+; -18.076 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:2:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 9.295      ;
+; -17.859 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 9.597      ;
+; -17.788 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:1:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 9.007      ;
+; -17.638 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 9.376      ;
+; -17.550 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 9.288      ;
+; -17.530 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:2:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 8.749      ;
+; -17.420 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 9.158      ;
+; -17.394 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 8.613      ;
+; -17.354 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 9.092      ;
+; -17.310 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:0:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 8.529      ;
+; -16.967 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.705      ;
+; -16.943 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 8.162      ;
+; -16.942 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.680      ;
+; -16.920 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 8.139      ;
+; -16.887 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 8.106      ;
+; -16.874 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.612      ;
+; -16.859 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 8.078      ;
+; -16.842 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.580      ;
+; -16.839 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.577      ;
+; -16.838 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.576      ;
+; -16.808 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.546      ;
+; -16.772 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 1.000        ; -9.448     ; 7.991      ;
+; -16.740 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.478      ;
+; -16.731 ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.469      ;
+; -16.490 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 7.709      ;
+; -16.421 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.159      ;
+; -16.396 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.134      ;
+; -16.350 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.088      ;
+; -16.296 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.034      ;
+; -16.293 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.031      ;
+; -16.292 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 1.000        ; -8.929     ; 8.030      ;
+; -16.242 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:2:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 7.461      ;
+; -16.185 ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 7.923      ;
+; -16.039 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 7.258      ;
+; -16.016 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 7.235      ;
+; -15.983 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 7.202      ;
+; -15.955 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 7.174      ;
+; -15.954 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 7.173      ;
+; -15.868 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 1.000        ; -9.448     ; 7.087      ;
+; -15.503 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.722      ;
+; -15.480 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.699      ;
+; -15.447 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.666      ;
+; -15.419 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.638      ;
+; -15.392 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.611      ;
+; -15.359 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.578      ;
+; -15.332 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.551      ;
+; -15.244 ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.463      ;
+; -15.244 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.463      ;
+; -15.211 ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.430      ;
+; -15.096 ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.315      ;
+; -14.984 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 6.722      ;
+; -14.819 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 6.038      ;
+; -14.767 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:3:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 5.986      ;
+; -14.561 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 5.780      ;
+; -14.531 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 6.269      ;
+; -14.528 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 5.747      ;
+; -14.506 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 6.244      ;
+; -14.413 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 1.000        ; -9.448     ; 5.632      ;
+; -14.406 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 6.144      ;
+; -14.403 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 6.141      ;
+; -14.402 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 1.000        ; -8.929     ; 6.140      ;
+; -14.357 ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q  ; i[1]                                                      ; reset1       ; reset1      ; 1.000        ; -11.179    ; 3.845      ;
+; -14.244 ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q             ; i[1]                                                      ; reset1       ; reset1      ; 1.000        ; -9.707     ; 5.204      ;
+; -14.192 ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; i[0]                                                      ; reset1       ; reset1      ; 1.000        ; -11.179    ; 3.680      ;
+; -14.093 ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q             ; i[0]                                                      ; reset1       ; reset1      ; 1.000        ; -9.707     ; 5.053      ;
+; -14.080 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 5.818      ;
+; -13.851 ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q  ; i[2]                                                      ; reset1       ; reset1      ; 1.000        ; -11.179    ; 3.339      ;
+; -13.796 ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; i[2]                                                      ; reset1       ; reset1      ; 1.000        ; -11.179    ; 3.284      ;
+; -13.788 ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q  ; i[0]                                                      ; reset1       ; reset1      ; 1.000        ; -11.179    ; 3.276      ;
+; -13.751 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 4.970      ;
+; -13.751 ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q             ; i[2]                                                      ; reset1       ; reset1      ; 1.000        ; -9.707     ; 4.711      ;
+; -13.720 ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; i[1]                                                      ; reset1       ; reset1      ; 1.000        ; -11.179    ; 3.208      ;
+; -13.664 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 4.883      ;
+; -13.627 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 5.365      ;
+; -13.602 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 5.340      ;
+; -13.544 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 5.282      ;
+; -13.543 ; Game:game1|SamplerOutput:outsample|D_FF:\random:1:twox|Q  ; i[1]                                                      ; reset1       ; reset1      ; 1.000        ; -11.179    ; 3.031      ;
+; -13.502 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 5.240      ;
+; -13.499 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 1.000        ; -8.929     ; 5.237      ;
+; -13.498 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 1.000        ; -8.929     ; 5.236      ;
+; -13.299 ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 1.000        ; -9.448     ; 4.518      ;
+; -13.148 ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 1.000        ; -9.448     ; 4.367      ;
++---------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'masterclock'                                                                                                                                                                                                                                ;
++---------+----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                                                        ; To Node                                                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -13.274 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q                                       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -3.009     ; 10.932     ;
+; -12.382 ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:0:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.732     ; 10.317     ;
+; -12.042 ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:1:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.732     ; 9.977      ;
+; -11.903 ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:3:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.320     ; 10.250     ;
+; -11.752 ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:2:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.732     ; 9.687      ;
+; -11.529 ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:4:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.732     ; 9.464      ;
+; -10.922 ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:6:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.732     ; 8.857      ;
+; -10.786 ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:5:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.732     ; 8.721      ;
+; -9.692  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:7:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.732     ; 7.627      ;
+; -9.042  ; reset1                                                                           ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.500        ; 3.699      ; 12.908     ;
+; -8.542  ; reset1                                                                           ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; 3.699      ; 12.908     ;
+; -7.359  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:8:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.320     ; 5.706      ;
+; -6.753  ; Game:game1|lfsr:rand1|D_FF:dff1|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 7.420      ;
+; -6.661  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:9:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.320     ; 5.008      ;
+; -6.552  ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q                                       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; reset1       ; masterclock ; 1.000        ; -3.009     ; 4.210      ;
+; -5.710  ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 6.377      ;
+; -5.592  ; Game:game1|lfsr:rand1|D_FF:dff5|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 6.259      ;
+; -5.591  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:10:twox|Q      ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; -2.320     ; 3.938      ;
+; -5.397  ; Game:game1|lfsr:rand1|D_FF:dff4|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 6.064      ;
+; -4.634  ; Game:game1|lfsr:rand1|D_FF:dff3|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 5.301      ;
+; -4.364  ; Game:game1|lfsr:rand1|D_FF:dff7|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 5.031      ;
+; -4.337  ; Game:game1|lfsr:rand1|D_FF:dff2|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 5.004      ;
+; -3.144  ; Game:game1|lfsr:rand1|D_FF:dff7|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff6|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 3.811      ;
+; -2.971  ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 3.638      ;
+; -2.933  ; Game:game1|lfsr:rand1|D_FF:dff6|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff5|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 3.600      ;
+; -2.898  ; Game:game1|lfsr:rand1|D_FF:dff6|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 3.565      ;
+; -2.505  ; Game:game1|lfsr:rand1|D_FF:dff9|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff8|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 3.172      ;
+; -2.427  ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff5|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 3.094      ;
+; -2.426  ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff3|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 3.093      ;
+; -2.425  ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff4|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 3.092      ;
+; -2.197  ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 2.864      ;
+; -2.075  ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff9|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 2.742      ;
+; -2.038  ; Game:game1|lfsr:rand1|D_FF:dff1|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 2.705      ;
+; -1.934  ; Game:game1|lfsr:rand1|D_FF:dff9|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 2.601      ;
+; -1.932  ; Game:game1|lfsr:rand1|D_FF:dff2|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff1|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 2.599      ;
+; -1.796  ; Game:game1|lfsr:rand1|D_FF:dff5|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff4|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 2.463      ;
+; -1.489  ; Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                        ; Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                        ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 2.156      ;
+; -1.473  ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 2.140      ;
+; -1.473  ; Game:game1|lfsr:rand1|D_FF:dff4|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff3|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 2.140      ;
+; -1.429  ; Game:game1|lfsr:rand1|D_FF:dff8|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 2.096      ;
+; -1.231  ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 1.898      ;
+; -1.194  ; oneclock:oonclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                                  ; oneclock:oonclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                                  ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 1.861      ;
+; -0.961  ; Game:game1|lfsr:rand1|D_FF:dff3|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff2|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 1.628      ;
+; -0.950  ; Game:game1|lfsr:rand1|D_FF:dff8|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff7|Q                                                ; masterclock  ; masterclock ; 1.000        ; 0.000      ; 1.617      ;
++---------+----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'reset1'                                                                                                                                                                             ;
++--------+-------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                       ; To Node                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -7.851 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.299      ;
+; -7.851 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.299      ;
+; -7.851 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.299      ;
+; -7.851 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.299      ;
+; -7.851 ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.299      ;
+; -7.851 ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.299      ;
+; -7.851 ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.299      ;
+; -7.851 ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.299      ;
+; -7.263 ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.887      ;
+; -7.257 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.893      ;
+; -7.252 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 1.898      ;
+; -6.846 ; Game:game1|temp1[3]                             ; Game:game1|temp1[3]                                       ; reset1       ; reset1      ; 0.000        ; 8.540      ; 1.915      ;
+; -6.832 ; Game:game1|temp1[1]                             ; Game:game1|temp1[1]                                       ; reset1       ; reset1      ; 0.000        ; 8.540      ; 1.929      ;
+; -6.686 ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 0.000        ; 8.929      ; 2.464      ;
+; -6.679 ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 2.471      ;
+; -6.595 ; Game:game1|temp1[2]                             ; Game:game1|temp1[2]                                       ; reset1       ; reset1      ; 0.000        ; 8.540      ; 2.166      ;
+; -6.592 ; Game:game1|temp1[2]                             ; Game:game1|temp1[3]                                       ; reset1       ; reset1      ; 0.000        ; 8.540      ; 2.169      ;
+; -6.550 ; Game:game1|temp1[0]                             ; Game:game1|temp1[0]                                       ; reset1       ; reset1      ; 0.000        ; 8.540      ; 2.211      ;
+; -6.536 ; Game:game1|temp1[0]                             ; Game:game1|temp1[1]                                       ; reset1       ; reset1      ; 0.000        ; 8.540      ; 2.225      ;
+; -6.353 ; Game:game1|temp1[1]                             ; Game:game1|temp1[3]                                       ; reset1       ; reset1      ; 0.000        ; 8.540      ; 2.408      ;
+; -6.352 ; Game:game1|temp1[1]                             ; Game:game1|temp1[2]                                       ; reset1       ; reset1      ; 0.000        ; 8.540      ; 2.409      ;
+; -6.220 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 2.930      ;
+; -6.210 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 2.940      ;
+; -6.200 ; Game:game1|temp1[0]                             ; Game:game1|temp1[3]                                       ; reset1       ; reset1      ; 0.000        ; 8.540      ; 2.561      ;
+; -6.199 ; Game:game1|temp1[0]                             ; Game:game1|temp1[2]                                       ; reset1       ; reset1      ; 0.000        ; 8.540      ; 2.562      ;
+; -5.620 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 3.530      ;
+; -5.615 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 3.535      ;
+; -5.369 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 0.000        ; 8.929      ; 3.781      ;
+; -5.368 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 3.782      ;
+; -5.365 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 3.785      ;
+; -5.099 ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 0.000        ; 8.021      ; 3.143      ;
+; -5.071 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 3.171      ;
+; -5.059 ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 3.183      ;
+; -4.985 ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 3.257      ;
+; -4.962 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 3.280      ;
+; -4.955 ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 3.287      ;
+; -4.686 ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.464      ;
+; -4.685 ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.465      ;
+; -4.682 ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.468      ;
+; -4.574 ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 0.000        ; 8.021      ; 3.668      ;
+; -4.538 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.612      ;
+; -4.537 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.613      ;
+; -4.534 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.616      ;
+; -4.523 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 3.719      ;
+; -4.499 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:3:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 3.743      ;
+; -4.450 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.700      ;
+; -4.449 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.701      ;
+; -4.446 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.704      ;
+; -4.442 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 3.800      ;
+; -4.346 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.804      ;
+; -4.321 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 4.829      ;
+; -3.914 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 0.000        ; 8.929      ; 5.236      ;
+; -3.913 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 5.237      ;
+; -3.911 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 4.331      ;
+; -3.910 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 5.240      ;
+; -3.875 ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 0.000        ; 8.021      ; 4.367      ;
+; -3.868 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 5.282      ;
+; -3.810 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 5.340      ;
+; -3.785 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 5.365      ;
+; -3.724 ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 4.518      ;
+; -3.387 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; reset1       ; reset1      ; 0.000        ; 21.485     ; 18.319     ;
+; -3.372 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; reset1       ; reset1      ; 0.000        ; 21.485     ; 18.334     ;
+; -3.359 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 4.883      ;
+; -3.332 ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 5.818      ;
+; -3.280 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 0.000        ; 21.485     ; 18.426     ;
+; -3.279 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 0.000        ; 21.485     ; 18.427     ;
+; -3.276 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 0.000        ; 21.485     ; 18.430     ;
+; -3.272 ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 4.970      ;
+; -3.176 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; 0.000        ; 21.485     ; 18.530     ;
+; -3.151 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; reset1       ; reset1      ; 0.000        ; 21.485     ; 18.555     ;
+; -3.010 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; 0.000        ; 8.929      ; 6.140      ;
+; -3.009 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 6.141      ;
+; -3.006 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 6.144      ;
+; -2.906 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 6.244      ;
+; -2.887 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q            ; reset1       ; reset1      ; -0.500       ; 21.485     ; 18.319     ;
+; -2.881 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 6.269      ;
+; -2.872 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q            ; reset1       ; reset1      ; -0.500       ; 21.485     ; 18.334     ;
+; -2.780 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q           ; reset1       ; reset1      ; -0.500       ; 21.485     ; 18.426     ;
+; -2.779 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q            ; reset1       ; reset1      ; -0.500       ; 21.485     ; 18.427     ;
+; -2.776 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q            ; reset1       ; reset1      ; -0.500       ; 21.485     ; 18.430     ;
+; -2.764 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; reset1       ; reset1      ; 0.000        ; 21.485     ; 18.942     ;
+; -2.698 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.008     ;
+; -2.676 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q            ; reset1       ; reset1      ; -0.500       ; 21.485     ; 18.530     ;
+; -2.651 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q            ; reset1       ; reset1      ; -0.500       ; 21.485     ; 18.555     ;
+; -2.610 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 0.000        ; 8.021      ; 5.632      ;
+; -2.568 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.138     ;
+; -2.495 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 5.747      ;
+; -2.462 ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 5.780      ;
+; -2.428 ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q  ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; 0.000        ; 8.929      ; 6.722      ;
+; -2.413 ; reset1                                          ; Game:game1|SamplerOutput:outsample|D_FF:\random:0:twox|Q  ; reset1       ; reset1      ; 0.000        ; 20.577     ; 18.385     ;
+; -2.264 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q            ; reset1       ; reset1      ; -0.500       ; 21.485     ; 18.942     ;
+; -2.256 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:3:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 5.986      ;
+; -2.204 ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 6.038      ;
+; -2.198 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q            ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.008     ;
+; -2.068 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q            ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.138     ;
+; -1.941 ; reset1                                          ; Game:game1|SamplerOutput:outsample|D_FF:\random:1:twox|Q  ; reset1       ; reset1      ; 0.000        ; 20.577     ; 18.857     ;
+; -1.934 ; reset1                                          ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q            ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.772     ;
+; -1.927 ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q ; reset1       ; reset1      ; 0.000        ; 8.021      ; 6.315      ;
+; -1.913 ; reset1                                          ; Game:game1|SamplerOutput:outsample|D_FF:\random:0:twox|Q  ; reset1       ; reset1      ; -0.500       ; 20.577     ; 18.385     ;
+; -1.812 ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q  ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q  ; reset1       ; reset1      ; 0.000        ; 8.021      ; 6.430      ;
++--------+-------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'masterclock'                                                                                                                                                                                                                                ;
++--------+----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                        ; To Node                                                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.396  ; Game:game1|lfsr:rand1|D_FF:dff8|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff7|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 1.617      ;
+; 1.407  ; Game:game1|lfsr:rand1|D_FF:dff3|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff2|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 1.628      ;
+; 1.640  ; oneclock:oonclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                                  ; oneclock:oonclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                                  ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 1.861      ;
+; 1.677  ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 1.898      ;
+; 1.875  ; Game:game1|lfsr:rand1|D_FF:dff8|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 2.096      ;
+; 1.919  ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 2.140      ;
+; 1.919  ; Game:game1|lfsr:rand1|D_FF:dff4|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff3|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 2.140      ;
+; 1.935  ; Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                        ; Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                        ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 2.156      ;
+; 2.242  ; Game:game1|lfsr:rand1|D_FF:dff5|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff4|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 2.463      ;
+; 2.378  ; Game:game1|lfsr:rand1|D_FF:dff2|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff1|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 2.599      ;
+; 2.380  ; Game:game1|lfsr:rand1|D_FF:dff9|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 2.601      ;
+; 2.484  ; Game:game1|lfsr:rand1|D_FF:dff1|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 2.705      ;
+; 2.521  ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff9|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 2.742      ;
+; 2.643  ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 2.864      ;
+; 2.871  ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff4|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 3.092      ;
+; 2.872  ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff3|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 3.093      ;
+; 2.873  ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff5|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 3.094      ;
+; 2.951  ; Game:game1|lfsr:rand1|D_FF:dff9|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff8|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 3.172      ;
+; 3.344  ; Game:game1|lfsr:rand1|D_FF:dff6|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 3.565      ;
+; 3.379  ; Game:game1|lfsr:rand1|D_FF:dff6|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff5|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 3.600      ;
+; 3.417  ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 3.638      ;
+; 3.590  ; Game:game1|lfsr:rand1|D_FF:dff7|Q                                                ; Game:game1|lfsr:rand1|D_FF:dff6|Q                                                ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 3.811      ;
+; 4.783  ; Game:game1|lfsr:rand1|D_FF:dff2|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 5.004      ;
+; 4.810  ; Game:game1|lfsr:rand1|D_FF:dff7|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 5.031      ;
+; 5.080  ; Game:game1|lfsr:rand1|D_FF:dff3|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 5.301      ;
+; 5.843  ; Game:game1|lfsr:rand1|D_FF:dff4|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 6.064      ;
+; 6.037  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:10:twox|Q      ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.320     ; 3.938      ;
+; 6.038  ; Game:game1|lfsr:rand1|D_FF:dff5|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 6.259      ;
+; 6.156  ; Game:game1|lfsr:rand1|D_FF:dff0|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 6.377      ;
+; 6.589  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:9:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.320     ; 4.490      ;
+; 6.632  ; reset1                                                                           ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; 3.699      ; 10.552     ;
+; 6.910  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:8:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.320     ; 4.811      ;
+; 6.998  ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q                                       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; reset1       ; masterclock ; 0.000        ; -3.009     ; 4.210      ;
+; 7.132  ; reset1                                                                           ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; -0.500       ; 3.699      ; 10.552     ;
+; 7.199  ; Game:game1|lfsr:rand1|D_FF:dff1|Q                                                ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; masterclock  ; masterclock ; 0.000        ; 0.000      ; 7.420      ;
+; 7.430  ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q                                       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -3.009     ; 4.642      ;
+; 8.066  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:3:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.320     ; 5.967      ;
+; 8.653  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:5:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.732     ; 6.142      ;
+; 8.830  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:7:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.732     ; 6.319      ;
+; 9.021  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:6:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.732     ; 6.510      ;
+; 9.247  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:1:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.732     ; 6.736      ;
+; 9.391  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:2:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.732     ; 6.880      ;
+; 9.469  ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:4:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.732     ; 6.958      ;
+; 10.472 ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:0:twox|Q       ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; -2.732     ; 7.961      ;
++--------+----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'masterclock'                                                                                                                                                                                       ;
++---------+--------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                  ; To Node                                                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+--------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -12.054 ; reset1                                     ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q                                    ; reset1       ; masterclock ; 0.500        ; 6.952      ; 19.173     ;
+; -11.554 ; reset1                                     ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q                                    ; reset1       ; masterclock ; 1.000        ; 6.952      ; 19.173     ;
+; -8.390  ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q ; reset1       ; masterclock ; 1.000        ; -3.009     ; 6.048      ;
+; -4.158  ; reset1                                     ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q ; reset1       ; masterclock ; 0.500        ; 3.699      ; 8.024      ;
+; -3.909  ; reset1                                     ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; reset1       ; masterclock ; 0.500        ; 3.699      ; 7.775      ;
+; -3.909  ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                        ; reset1       ; masterclock ; 0.500        ; 3.699      ; 7.775      ;
+; -3.844  ; reset1                                     ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.500        ; 3.699      ; 7.710      ;
+; -3.658  ; reset1                                     ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q ; reset1       ; masterclock ; 1.000        ; 3.699      ; 8.024      ;
+; -3.563  ; reset1                                     ; oneclock:oonclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; masterclock ; 0.500        ; 3.699      ; 7.429      ;
+; -3.409  ; reset1                                     ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; reset1       ; masterclock ; 1.000        ; 3.699      ; 7.775      ;
+; -3.409  ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                        ; reset1       ; masterclock ; 1.000        ; 3.699      ; 7.775      ;
+; -3.344  ; reset1                                     ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 1.000        ; 3.699      ; 7.710      ;
+; -3.063  ; reset1                                     ; oneclock:oonclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; masterclock ; 1.000        ; 3.699      ; 7.429      ;
++---------+--------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'reset1'                                                                                                                                                                                            ;
++--------+--------------------------------------------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                  ; To Node                                                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -8.441 ; reset1                                     ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q                                     ; reset1       ; reset1      ; 0.500        ; 10.565     ; 19.173     ;
+; -7.941 ; reset1                                     ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q                                     ; reset1       ; reset1      ; 1.000        ; 10.565     ; 19.173     ;
+; -7.025 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:0:twox|Q                          ; reset1       ; reset1      ; 0.500        ; 12.037     ; 19.229     ;
+; -6.969 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:1:twox|Q                          ; reset1       ; reset1      ; 0.500        ; 12.037     ; 19.173     ;
+; -6.969 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:2:twox|Q                          ; reset1       ; reset1      ; 0.500        ; 12.037     ; 19.173     ;
+; -6.969 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q                          ; reset1       ; reset1      ; 0.500        ; 12.037     ; 19.173     ;
+; -6.969 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q                          ; reset1       ; reset1      ; 0.500        ; 12.037     ; 19.173     ;
+; -6.969 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q                          ; reset1       ; reset1      ; 0.500        ; 12.037     ; 19.173     ;
+; -6.969 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q                          ; reset1       ; reset1      ; 0.500        ; 12.037     ; 19.173     ;
+; -6.969 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q                          ; reset1       ; reset1      ; 0.500        ; 12.037     ; 19.173     ;
+; -6.969 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q                         ; reset1       ; reset1      ; 0.500        ; 12.037     ; 19.173     ;
+; -6.595 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:14:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 1.000        ; -0.376     ; 6.886      ;
+; -6.557 ; reset1                                     ; Game:game1|temp1[2]                                                               ; reset1       ; reset1      ; 0.500        ; 7.902      ; 14.626     ;
+; -6.557 ; reset1                                     ; Game:game1|temp1[0]                                                               ; reset1       ; reset1      ; 0.500        ; 7.902      ; 14.626     ;
+; -6.557 ; reset1                                     ; Game:game1|temp1[1]                                                               ; reset1       ; reset1      ; 0.500        ; 7.902      ; 14.626     ;
+; -6.557 ; reset1                                     ; Game:game1|temp1[3]                                                               ; reset1       ; reset1      ; 0.500        ; 7.902      ; 14.626     ;
+; -6.525 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:0:twox|Q                          ; reset1       ; reset1      ; 1.000        ; 12.037     ; 19.229     ;
+; -6.469 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:1:twox|Q                          ; reset1       ; reset1      ; 1.000        ; 12.037     ; 19.173     ;
+; -6.469 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:2:twox|Q                          ; reset1       ; reset1      ; 1.000        ; 12.037     ; 19.173     ;
+; -6.469 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q                          ; reset1       ; reset1      ; 1.000        ; 12.037     ; 19.173     ;
+; -6.469 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q                          ; reset1       ; reset1      ; 1.000        ; 12.037     ; 19.173     ;
+; -6.469 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q                          ; reset1       ; reset1      ; 1.000        ; 12.037     ; 19.173     ;
+; -6.469 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q                          ; reset1       ; reset1      ; 1.000        ; 12.037     ; 19.173     ;
+; -6.469 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q                          ; reset1       ; reset1      ; 1.000        ; 12.037     ; 19.173     ;
+; -6.469 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q                         ; reset1       ; reset1      ; 1.000        ; 12.037     ; 19.173     ;
+; -6.387 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:12:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 1.000        ; -0.161     ; 6.893      ;
+; -6.386 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q                                    ; reset1       ; reset1      ; 0.500        ; 12.556     ; 19.109     ;
+; -6.386 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q                                    ; reset1       ; reset1      ; 0.500        ; 12.556     ; 19.109     ;
+; -6.386 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q                                    ; reset1       ; reset1      ; 0.500        ; 12.556     ; 19.109     ;
+; -6.386 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q                                    ; reset1       ; reset1      ; 0.500        ; 12.556     ; 19.109     ;
+; -6.386 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q                                    ; reset1       ; reset1      ; 0.500        ; 12.556     ; 19.109     ;
+; -6.386 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q                                    ; reset1       ; reset1      ; 0.500        ; 12.556     ; 19.109     ;
+; -6.386 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q                                    ; reset1       ; reset1      ; 0.500        ; 12.556     ; 19.109     ;
+; -6.386 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q                                   ; reset1       ; reset1      ; 0.500        ; 12.556     ; 19.109     ;
+; -6.385 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:11:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 1.000        ; -1.261     ; 5.791      ;
+; -6.377 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:8:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 1.000        ; -1.253     ; 5.791      ;
+; -6.363 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q                                    ; reset1       ; reset1      ; 0.500        ; 12.556     ; 19.086     ;
+; -6.343 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q                          ; reset1       ; reset1      ; 0.500        ; 12.037     ; 18.547     ;
+; -6.343 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:3:twox|Q                          ; reset1       ; reset1      ; 0.500        ; 12.037     ; 18.547     ;
+; -6.246 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q                                    ; reset1       ; reset1      ; 0.500        ; 12.556     ; 18.969     ;
+; -6.246 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q                                    ; reset1       ; reset1      ; 0.500        ; 12.556     ; 18.969     ;
+; -6.057 ; reset1                                     ; Game:game1|temp1[2]                                                               ; reset1       ; reset1      ; 1.000        ; 7.902      ; 14.626     ;
+; -6.057 ; reset1                                     ; Game:game1|temp1[0]                                                               ; reset1       ; reset1      ; 1.000        ; 7.902      ; 14.626     ;
+; -6.057 ; reset1                                     ; Game:game1|temp1[1]                                                               ; reset1       ; reset1      ; 1.000        ; 7.902      ; 14.626     ;
+; -6.057 ; reset1                                     ; Game:game1|temp1[3]                                                               ; reset1       ; reset1      ; 1.000        ; 7.902      ; 14.626     ;
+; -6.030 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:5:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 1.000        ; -0.440     ; 6.257      ;
+; -5.949 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:10:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 1.000        ; -0.948     ; 5.668      ;
+; -5.891 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:3:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 1.000        ; -0.301     ; 6.257      ;
+; -5.886 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q                                    ; reset1       ; reset1      ; 1.000        ; 12.556     ; 19.109     ;
+; -5.886 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q                                    ; reset1       ; reset1      ; 1.000        ; 12.556     ; 19.109     ;
+; -5.886 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q                                    ; reset1       ; reset1      ; 1.000        ; 12.556     ; 19.109     ;
+; -5.886 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q                                    ; reset1       ; reset1      ; 1.000        ; 12.556     ; 19.109     ;
+; -5.886 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q                                    ; reset1       ; reset1      ; 1.000        ; 12.556     ; 19.109     ;
+; -5.886 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q                                    ; reset1       ; reset1      ; 1.000        ; 12.556     ; 19.109     ;
+; -5.886 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q                                    ; reset1       ; reset1      ; 1.000        ; 12.556     ; 19.109     ;
+; -5.886 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q                                   ; reset1       ; reset1      ; 1.000        ; 12.556     ; 19.109     ;
+; -5.863 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q                                    ; reset1       ; reset1      ; 1.000        ; 12.556     ; 19.086     ;
+; -5.858 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:6:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 1.000        ; -0.770     ; 5.755      ;
+; -5.854 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:7:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 1.000        ; -0.766     ; 5.755      ;
+; -5.843 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q                          ; reset1       ; reset1      ; 1.000        ; 12.037     ; 18.547     ;
+; -5.843 ; reset1                                     ; Game:game1|SamplerOutput:outsample|D_FF:\random:3:twox|Q                          ; reset1       ; reset1      ; 1.000        ; 12.037     ; 18.547     ;
+; -5.843 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:9:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 1.000        ; -0.842     ; 5.668      ;
+; -5.746 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q                                    ; reset1       ; reset1      ; 1.000        ; 12.556     ; 18.969     ;
+; -5.746 ; reset1                                     ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q                                    ; reset1       ; reset1      ; 1.000        ; 12.556     ; 18.969     ;
+; -5.687 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:1:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 1.000        ; -0.306     ; 6.048      ;
+; -5.665 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:9:twox|Q        ; reset1       ; reset1      ; 1.000        ; -0.689     ; 5.643      ;
+; -5.665 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:8:twox|Q        ; reset1       ; reset1      ; 1.000        ; -0.689     ; 5.643      ;
+; -5.665 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:10:twox|Q       ; reset1       ; reset1      ; 1.000        ; -0.689     ; 5.643      ;
+; -5.665 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:3:twox|Q        ; reset1       ; reset1      ; 1.000        ; -0.689     ; 5.643      ;
+; -5.654 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:15:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 1.000        ; -0.678     ; 5.643      ;
+; -5.653 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:0:twox|Q        ; reset1       ; reset1      ; 1.000        ; -0.277     ; 6.043      ;
+; -5.653 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:1:twox|Q        ; reset1       ; reset1      ; 1.000        ; -0.277     ; 6.043      ;
+; -5.653 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:5:twox|Q        ; reset1       ; reset1      ; 1.000        ; -0.277     ; 6.043      ;
+; -5.653 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:6:twox|Q        ; reset1       ; reset1      ; 1.000        ; -0.277     ; 6.043      ;
+; -5.653 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:7:twox|Q        ; reset1       ; reset1      ; 1.000        ; -0.277     ; 6.043      ;
+; -5.653 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:2:twox|Q        ; reset1       ; reset1      ; 1.000        ; -0.277     ; 6.043      ;
+; -5.653 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:4:twox|Q        ; reset1       ; reset1      ; 1.000        ; -0.277     ; 6.043      ;
+; -5.490 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:2:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 1.000        ; 0.100      ; 6.257      ;
+; -5.454 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:4:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 1.000        ; 0.772      ; 6.893      ;
+; -5.244 ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:13:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 1.000        ; 0.975      ; 6.886      ;
+; -2.842 ; reset1                                     ; oneclock:oonclk|dbtwo:\Q1:7:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; 0.500        ; 5.772      ; 8.781      ;
+; -2.363 ; reset1                                     ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:14:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 0.500        ; 6.332      ; 8.862      ;
+; -2.342 ; reset1                                     ; oneclock:oonclk|dbtwo:\Q1:7:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; 1.000        ; 5.772      ; 8.781      ;
+; -2.238 ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:2:dbtwox|D_FF:D_FF1|Q                         ; reset1       ; reset1      ; 0.500        ; 5.933      ; 8.338      ;
+; -2.203 ; reset1                                     ; oneclock:oonclk|dbtwo:\Q1:10:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; reset1      ; 0.500        ; 5.655      ; 8.025      ;
+; -2.202 ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:12:dbtwox|D_FF:D_FF1|Q                        ; reset1       ; reset1      ; 0.500        ; 5.975      ; 8.344      ;
+; -2.161 ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:14:dbtwox|D_FF:D_FF1|Q                        ; reset1       ; reset1      ; 0.500        ; 6.015      ; 8.343      ;
+; -2.155 ; reset1                                     ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:12:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 0.500        ; 6.547      ; 8.869      ;
+; -2.153 ; reset1                                     ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:11:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 0.500        ; 5.447      ; 7.767      ;
+; -2.145 ; reset1                                     ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:8:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 0.500        ; 5.455      ; 7.767      ;
+; -2.032 ; reset1                                     ; Game:game1|Debouncer:debounce|D_FF:D_FF0|Q                                        ; reset1       ; reset1      ; 0.500        ; 6.777      ; 8.976      ;
+; -1.991 ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:5:dbtwox|D_FF:D_FF1|Q                         ; reset1       ; reset1      ; 0.500        ; 5.457      ; 7.615      ;
+; -1.983 ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:6:dbtwox|D_FF:D_FF1|Q                         ; reset1       ; reset1      ; 0.500        ; 5.465      ; 7.615      ;
+; -1.972 ; reset1                                     ; oneclock:oonclk|dbtwo:\Q1:6:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; 0.500        ; 6.642      ; 8.781      ;
+; -1.868 ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:10:dbtwox|D_FF:D_FF1|Q                        ; reset1       ; reset1      ; 0.500        ; 6.268      ; 8.303      ;
+; -1.863 ; reset1                                     ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:14:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 1.000        ; 6.332      ; 8.862      ;
+; -1.830 ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:13:dbtwox|D_FF:D_FF1|Q                        ; reset1       ; reset1      ; 0.500        ; 6.346      ; 8.343      ;
+; -1.798 ; reset1                                     ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:5:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 0.500        ; 6.268      ; 8.233      ;
+; -1.793 ; reset1                                     ; oneclock:oonclk|dbtwo:\Q1:8:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; 0.500        ; 5.470      ; 7.430      ;
+; -1.784 ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:4:dbtwox|D_FF:D_FF1|Q                         ; reset1       ; reset1      ; 0.500        ; 7.025      ; 8.976      ;
++--------+--------------------------------------------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'reset1'                                                                                                                                                            ;
++--------+-----------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.737 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q                                    ; reset1       ; reset1      ; 0.000        ; 21.485     ; 18.969     ;
+; -2.737 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q                                    ; reset1       ; reset1      ; 0.000        ; 21.485     ; 18.969     ;
+; -2.620 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q                                    ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.086     ;
+; -2.597 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q                                    ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.109     ;
+; -2.597 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q                                    ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.109     ;
+; -2.597 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q                                    ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.109     ;
+; -2.597 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q                                    ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.109     ;
+; -2.597 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q                                    ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.109     ;
+; -2.597 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q                                    ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.109     ;
+; -2.597 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q                                    ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.109     ;
+; -2.597 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q                                   ; reset1       ; reset1      ; 0.000        ; 21.485     ; 19.109     ;
+; -2.251 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q                          ; reset1       ; reset1      ; 0.000        ; 20.577     ; 18.547     ;
+; -2.251 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:3:twox|Q                          ; reset1       ; reset1      ; 0.000        ; 20.577     ; 18.547     ;
+; -2.237 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q                                    ; reset1       ; reset1      ; -0.500       ; 21.485     ; 18.969     ;
+; -2.237 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q                                    ; reset1       ; reset1      ; -0.500       ; 21.485     ; 18.969     ;
+; -2.120 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q                                    ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.086     ;
+; -2.097 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q                                    ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.109     ;
+; -2.097 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q                                    ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.109     ;
+; -2.097 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q                                    ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.109     ;
+; -2.097 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q                                    ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.109     ;
+; -2.097 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q                                    ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.109     ;
+; -2.097 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:8:twox|Q                                    ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.109     ;
+; -2.097 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:9:twox|Q                                    ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.109     ;
+; -2.097 ; reset1    ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q                                   ; reset1       ; reset1      ; -0.500       ; 21.485     ; 19.109     ;
+; -2.037 ; reset1    ; Game:game1|temp1[2]                                                               ; reset1       ; reset1      ; 0.000        ; 16.442     ; 14.626     ;
+; -2.037 ; reset1    ; Game:game1|temp1[0]                                                               ; reset1       ; reset1      ; 0.000        ; 16.442     ; 14.626     ;
+; -2.037 ; reset1    ; Game:game1|temp1[1]                                                               ; reset1       ; reset1      ; 0.000        ; 16.442     ; 14.626     ;
+; -2.037 ; reset1    ; Game:game1|temp1[3]                                                               ; reset1       ; reset1      ; 0.000        ; 16.442     ; 14.626     ;
+; -1.751 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox|Q                          ; reset1       ; reset1      ; -0.500       ; 20.577     ; 18.547     ;
+; -1.751 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:3:twox|Q                          ; reset1       ; reset1      ; -0.500       ; 20.577     ; 18.547     ;
+; -1.625 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:1:twox|Q                          ; reset1       ; reset1      ; 0.000        ; 20.577     ; 19.173     ;
+; -1.625 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:2:twox|Q                          ; reset1       ; reset1      ; 0.000        ; 20.577     ; 19.173     ;
+; -1.625 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q                          ; reset1       ; reset1      ; 0.000        ; 20.577     ; 19.173     ;
+; -1.625 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q                          ; reset1       ; reset1      ; 0.000        ; 20.577     ; 19.173     ;
+; -1.625 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q                          ; reset1       ; reset1      ; 0.000        ; 20.577     ; 19.173     ;
+; -1.625 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q                          ; reset1       ; reset1      ; 0.000        ; 20.577     ; 19.173     ;
+; -1.625 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q                          ; reset1       ; reset1      ; 0.000        ; 20.577     ; 19.173     ;
+; -1.625 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q                         ; reset1       ; reset1      ; 0.000        ; 20.577     ; 19.173     ;
+; -1.569 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:0:twox|Q                          ; reset1       ; reset1      ; 0.000        ; 20.577     ; 19.229     ;
+; -1.537 ; reset1    ; Game:game1|temp1[2]                                                               ; reset1       ; reset1      ; -0.500       ; 16.442     ; 14.626     ;
+; -1.537 ; reset1    ; Game:game1|temp1[0]                                                               ; reset1       ; reset1      ; -0.500       ; 16.442     ; 14.626     ;
+; -1.537 ; reset1    ; Game:game1|temp1[1]                                                               ; reset1       ; reset1      ; -0.500       ; 16.442     ; 14.626     ;
+; -1.537 ; reset1    ; Game:game1|temp1[3]                                                               ; reset1       ; reset1      ; -0.500       ; 16.442     ; 14.626     ;
+; -1.125 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:1:twox|Q                          ; reset1       ; reset1      ; -0.500       ; 20.577     ; 19.173     ;
+; -1.125 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:2:twox|Q                          ; reset1       ; reset1      ; -0.500       ; 20.577     ; 19.173     ;
+; -1.125 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox|Q                          ; reset1       ; reset1      ; -0.500       ; 20.577     ; 19.173     ;
+; -1.125 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox|Q                          ; reset1       ; reset1      ; -0.500       ; 20.577     ; 19.173     ;
+; -1.125 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox|Q                          ; reset1       ; reset1      ; -0.500       ; 20.577     ; 19.173     ;
+; -1.125 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox|Q                          ; reset1       ; reset1      ; -0.500       ; 20.577     ; 19.173     ;
+; -1.125 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox|Q                          ; reset1       ; reset1      ; -0.500       ; 20.577     ; 19.173     ;
+; -1.125 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox|Q                         ; reset1       ; reset1      ; -0.500       ; 20.577     ; 19.173     ;
+; -1.069 ; reset1    ; Game:game1|SamplerOutput:outsample|D_FF:\random:0:twox|Q                          ; reset1       ; reset1      ; -0.500       ; 20.577     ; 19.229     ;
+; -0.153 ; reset1    ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q                                     ; reset1       ; reset1      ; 0.000        ; 19.105     ; 19.173     ;
+; 0.347  ; reset1    ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q                                     ; reset1       ; reset1      ; -0.500       ; 19.105     ; 19.173     ;
+; 0.873  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:12:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; reset1      ; 0.000        ; 5.522      ; 6.616      ;
+; 0.882  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:14:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; reset1      ; 0.000        ; 5.513      ; 6.616      ;
+; 0.958  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:13:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 0.000        ; 7.683      ; 8.862      ;
+; 1.168  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:4:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 0.000        ; 7.480      ; 8.869      ;
+; 1.200  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:9:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; 0.000        ; 6.604      ; 8.025      ;
+; 1.204  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:2:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 0.000        ; 6.808      ; 8.233      ;
+; 1.298  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:13:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; reset1      ; 0.000        ; 5.910      ; 7.429      ;
+; 1.308  ; reset1    ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q                                        ; reset1       ; reset1      ; 0.000        ; 6.708      ; 8.237      ;
+; 1.367  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:0:twox|Q        ; reset1       ; reset1      ; 0.000        ; 6.431      ; 8.019      ;
+; 1.367  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:1:twox|Q        ; reset1       ; reset1      ; 0.000        ; 6.431      ; 8.019      ;
+; 1.367  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:5:twox|Q        ; reset1       ; reset1      ; 0.000        ; 6.431      ; 8.019      ;
+; 1.367  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:6:twox|Q        ; reset1       ; reset1      ; 0.000        ; 6.431      ; 8.019      ;
+; 1.367  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:7:twox|Q        ; reset1       ; reset1      ; 0.000        ; 6.431      ; 8.019      ;
+; 1.367  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:2:twox|Q        ; reset1       ; reset1      ; 0.000        ; 6.431      ; 8.019      ;
+; 1.367  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:4:twox|Q        ; reset1       ; reset1      ; 0.000        ; 6.431      ; 8.019      ;
+; 1.368  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:15:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 0.000        ; 6.030      ; 7.619      ;
+; 1.371  ; reset1    ; Game:game1|oneclock:onclk|dbtwo:\Q1:8:dbtwox|D_FF:D_FF1|Q                         ; reset1       ; reset1      ; 0.000        ; 6.183      ; 7.775      ;
+; 1.373  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:12:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; reset1      ; -0.500       ; 5.522      ; 6.616      ;
+; 1.379  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:9:twox|Q        ; reset1       ; reset1      ; 0.000        ; 6.019      ; 7.619      ;
+; 1.379  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:8:twox|Q        ; reset1       ; reset1      ; 0.000        ; 6.019      ; 7.619      ;
+; 1.379  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:10:twox|Q       ; reset1       ; reset1      ; 0.000        ; 6.019      ; 7.619      ;
+; 1.379  ; reset1    ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:3:twox|Q        ; reset1       ; reset1      ; 0.000        ; 6.019      ; 7.619      ;
+; 1.382  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:14:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; reset1      ; -0.500       ; 5.513      ; 6.616      ;
+; 1.386  ; reset1    ; Game:game1|oneclock:onclk|dbtwo:\Q1:11:dbtwox|D_FF:D_FF1|Q                        ; reset1       ; reset1      ; 0.000        ; 6.737      ; 8.344      ;
+; 1.401  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:1:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 0.000        ; 6.402      ; 8.024      ;
+; 1.458  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:13:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; -0.500       ; 7.683      ; 8.862      ;
+; 1.498  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:3:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; 0.000        ; 5.151      ; 6.870      ;
+; 1.508  ; reset1    ; Game:game1|oneclock:onclk|dbtwo:\Q1:9:dbtwox|D_FF:D_FF1|Q                         ; reset1       ; reset1      ; 0.000        ; 6.574      ; 8.303      ;
+; 1.540  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:2:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; 0.000        ; 5.109      ; 6.870      ;
+; 1.548  ; reset1    ; Game:game1|oneclock:onclk|dbtwo:\Q1:3:dbtwox|D_FF:D_FF1|Q                         ; reset1       ; reset1      ; 0.000        ; 5.928      ; 7.697      ;
+; 1.549  ; reset1    ; Game:game1|oneclock:onclk|dbtwo:\Q1:1:dbtwox|D_FF:D_FF1|Q                         ; reset1       ; reset1      ; 0.000        ; 6.511      ; 8.281      ;
+; 1.557  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:9:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 0.000        ; 5.866      ; 7.644      ;
+; 1.560  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:11:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; reset1      ; 0.000        ; 6.895      ; 8.676      ;
+; 1.568  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:7:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 0.000        ; 5.942      ; 7.731      ;
+; 1.572  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:6:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 0.000        ; 5.938      ; 7.731      ;
+; 1.580  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:4:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; 0.000        ; 6.373      ; 8.174      ;
+; 1.605  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:3:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; 0.000        ; 6.407      ; 8.233      ;
+; 1.663  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:10:dbtwox|D_FF:D_FF1|Q ; reset1       ; reset1      ; 0.000        ; 5.760      ; 7.644      ;
+; 1.668  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:4:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; -0.500       ; 7.480      ; 8.869      ;
+; 1.686  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:1:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; 0.000        ; 5.523      ; 7.430      ;
+; 1.688  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:15:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; reset1      ; 0.000        ; 6.082      ; 7.991      ;
+; 1.700  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:9:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; -0.500       ; 6.604      ; 8.025      ;
+; 1.704  ; reset1    ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:2:dbtwox|D_FF:D_FF1|Q  ; reset1       ; reset1      ; -0.500       ; 6.808      ; 8.233      ;
+; 1.705  ; reset1    ; Game:game1|oneclock:onclk|dbtwo:\Q1:7:dbtwox|D_FF:D_FF1|Q                         ; reset1       ; reset1      ; 0.000        ; 5.771      ; 7.697      ;
+; 1.710  ; reset1    ; Game:game1|oneclock:onclk|dbtwo:\Q1:15:dbtwox|D_FF:D_FF1|Q                        ; reset1       ; reset1      ; 0.000        ; 6.407      ; 8.338      ;
+; 1.728  ; reset1    ; oneclock:oonclk|dbtwo:\Q1:5:dbtwox|D_FF:D_FF1|Q                                   ; reset1       ; reset1      ; 0.000        ; 6.225      ; 8.174      ;
++--------+-----------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'masterclock'                                                                                                                                                                                       ;
++--------+--------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                  ; To Node                                                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 3.509  ; reset1                                     ; oneclock:oonclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; masterclock ; 0.000        ; 3.699      ; 7.429      ;
+; 3.790  ; reset1                                     ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; 0.000        ; 3.699      ; 7.710      ;
+; 3.855  ; reset1                                     ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; reset1       ; masterclock ; 0.000        ; 3.699      ; 7.775      ;
+; 3.855  ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                        ; reset1       ; masterclock ; 0.000        ; 3.699      ; 7.775      ;
+; 4.009  ; reset1                                     ; oneclock:oonclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                                  ; reset1       ; masterclock ; -0.500       ; 3.699      ; 7.429      ;
+; 4.104  ; reset1                                     ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q ; reset1       ; masterclock ; 0.000        ; 3.699      ; 8.024      ;
+; 4.290  ; reset1                                     ; Game:game1|ledfsm:ledfsm1|D_FF:DFF0|Q                                            ; reset1       ; masterclock ; -0.500       ; 3.699      ; 7.710      ;
+; 4.355  ; reset1                                     ; Game:game1|ledfsm:ledfsm1|D_FF:DFF1|Q                                            ; reset1       ; masterclock ; -0.500       ; 3.699      ; 7.775      ;
+; 4.355  ; reset1                                     ; Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q                        ; reset1       ; masterclock ; -0.500       ; 3.699      ; 7.775      ;
+; 4.604  ; reset1                                     ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q ; reset1       ; masterclock ; -0.500       ; 3.699      ; 8.024      ;
+; 8.836  ; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q ; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1|Q ; reset1       ; masterclock ; 0.000        ; -3.009     ; 6.048      ;
+; 12.000 ; reset1                                     ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q                                    ; reset1       ; masterclock ; 0.000        ; 6.952      ; 19.173     ;
+; 12.500 ; reset1                                     ; Game:game1|GameOverFSM:gameisover1|D_FF:dff|Q                                    ; reset1       ; masterclock ; -0.500       ; 6.952      ; 19.173     ;
++--------+--------------------------------------------+----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++-------------+-------------+----------+----------+----------+----------+
+; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------+-------------+----------+----------+----------+----------+
+; masterclock ; masterclock ; 29       ; 0        ; 0        ; 0        ;
+; reset1      ; masterclock ; 90       ; 11       ; 0        ; 0        ;
+; masterclock ; reset1      ; 10       ; 0        ; 0        ; 0        ;
+; reset1      ; reset1      ; 2133     ; 64       ; 0        ; 0        ;
++-------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++-------------+-------------+----------+----------+----------+----------+
+; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------+-------------+----------+----------+----------+----------+
+; masterclock ; masterclock ; 29       ; 0        ; 0        ; 0        ;
+; reset1      ; masterclock ; 90       ; 11       ; 0        ; 0        ;
+; masterclock ; reset1      ; 10       ; 0        ; 0        ; 0        ;
+; reset1      ; reset1      ; 2133     ; 64       ; 0        ; 0        ;
++-------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++----------------------------------------------------------------------+
+; Recovery Transfers                                                   ;
++------------+-------------+----------+----------+----------+----------+
+; From Clock ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-------------+----------+----------+----------+----------+
+; reset1     ; masterclock ; 7        ; 6        ; 0        ; 0        ;
+; reset1     ; reset1      ; 111      ; 85       ; 0        ; 0        ;
++------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++----------------------------------------------------------------------+
+; Removal Transfers                                                    ;
++------------+-------------+----------+----------+----------+----------+
+; From Clock ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-------------+----------+----------+----------+----------+
+; reset1     ; masterclock ; 7        ; 6        ; 0        ; 0        ;
+; reset1     ; reset1      ; 111      ; 85       ; 0        ; 0        ;
++------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 88    ; 88   ;
+; Unconstrained Output Ports      ; 23    ; 23   ;
+; Unconstrained Output Port Paths ; 64    ; 64   ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------+
+; Clock Status Summary                           ;
++-------------+-------------+------+-------------+
+; Target      ; Clock       ; Type ; Status      ;
++-------------+-------------+------+-------------+
+; masterclock ; masterclock ; Base ; Constrained ;
+; reset1      ; reset1      ; Base ; Constrained ;
++-------------+-------------+------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                                          ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                                                               ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+; pwreset    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found                                  ;
+; reset1     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found. This port has clock assignment. ;
+; switch1    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found                                  ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                              ;
++-----------------+---------------------------------------------------------------------------------------+
+; Output Port     ; Comment                                                                               ;
++-----------------+---------------------------------------------------------------------------------------+
+; go              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[0]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[1]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[2]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[3]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[4]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[5]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[6]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[7]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_en          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_rs          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledoutput       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[8]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[9]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[10] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                                          ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                                                               ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+; pwreset    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found                                  ;
+; reset1     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found. This port has clock assignment. ;
+; switch1    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found                                  ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                              ;
++-----------------+---------------------------------------------------------------------------------------+
+; Output Port     ; Comment                                                                               ;
++-----------------+---------------------------------------------------------------------------------------+
+; go              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[0]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[1]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[2]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[3]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[4]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[5]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[6]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd1[7]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_en          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_rs          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledoutput       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[8]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[9]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; tottimeout1[10] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Fri Apr 20 21:17:30 2018
+Info: Command: quartus_sta ReactionGame -c ReactionGame
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ReactionGame.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name reset1 reset1
+    Info (332105): create_clock -period 1.000 -name masterclock masterclock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -20.433
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -20.433            -994.221 reset1 
+    Info (332119):   -13.274             -45.129 masterclock 
+Info (332146): Worst-case hold slack is -7.851
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -7.851            -144.636 reset1 
+    Info (332119):     1.396               0.000 masterclock 
+Info (332146): Worst-case recovery slack is -12.054
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -12.054             -35.669 masterclock 
+    Info (332119):    -8.441            -386.547 reset1 
+Info (332146): Worst-case removal slack is -2.737
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.737             -56.242 reset1 
+    Info (332119):     3.509               0.000 masterclock 
+Info (332146): Worst-case minimum pulse width slack is -8.695
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -8.695           -1034.499 reset1 
+    Info (332119):    -2.289              -2.289 masterclock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 1007 megabytes
+    Info: Processing ended: Fri Apr 20 21:17:31 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

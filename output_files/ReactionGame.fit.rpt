@@ -1,0 +1,967 @@
+Fitter report for ReactionGame
+Fri Apr 20 21:17:27 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Pin-Out File
+  6. Fitter Resource Usage Summary
+  7. Input Pins
+  8. Output Pins
+  9. I/O Bank Usage
+ 10. All Package Pins
+ 11. Output Pin Default Load For Reported TCO
+ 12. Fitter Resource Utilization by Entity
+ 13. Delay Chain Summary
+ 14. Control Signals
+ 15. Global & Other Fast Signals
+ 16. Routing Usage Summary
+ 17. LAB Logic Elements
+ 18. LAB-wide Signals
+ 19. LAB Signals Sourced
+ 20. LAB Signals Sourced Out
+ 21. LAB Distinct Inputs
+ 22. Fitter Device Options
+ 23. Estimated Delay Added for Hold Timing Summary
+ 24. Estimated Delay Added for Hold Timing Details
+ 25. Fitter Messages
+ 26. Fitter Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------+
+; Fitter Summary                                                      ;
++-----------------------+---------------------------------------------+
+; Fitter Status         ; Successful - Fri Apr 20 21:17:27 2018       ;
+; Quartus Prime Version ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name         ; ReactionGame                                ;
+; Top-level Entity Name ; ReactionGame                                ;
+; Family                ; MAX V                                       ;
+; Device                ; 5M1270ZT144C5                               ;
+; Timing Models         ; Final                                       ;
+; Total logic elements  ; 293 / 1,270 ( 23 % )                        ;
+; Total pins            ; 30 / 114 ( 26 % )                           ;
+; Total virtual pins    ; 0                                           ;
+; UFM blocks            ; 0 / 1 ( 0 % )                               ;
++-----------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                                              ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Option                                                                     ; Setting                        ; Default Value                  ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Device                                                                     ; 5M1270ZT144C5                  ;                                ;
+; Minimum Core Junction Temperature                                          ; 0                              ;                                ;
+; Maximum Core Junction Temperature                                          ; 85                             ;                                ;
+; Fit Attempts to Skip                                                       ; 0                              ; 0.0                            ;
+; Use smart compilation                                                      ; Off                            ; Off                            ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                             ; On                             ;
+; Enable compact report table                                                ; Off                            ; Off                            ;
+; Router Timing Optimization Level                                           ; Normal                         ; Normal                         ;
+; Placement Effort Multiplier                                                ; 1.0                            ; 1.0                            ;
+; Router Effort Multiplier                                                   ; 1.0                            ; 1.0                            ;
+; Always Enable Input Buffers                                                ; Off                            ; Off                            ;
+; Optimize Hold Timing                                                       ; IO Paths and Minimum TPD Paths ; IO Paths and Minimum TPD Paths ;
+; Optimize Multi-Corner Timing                                               ; Off                            ; Off                            ;
+; Guarantee I/O Paths Have Zero Hold Time at Fast Corner                     ; On                             ; On                             ;
+; PowerPlay Power Optimization During Fitting                                ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing                                                            ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing for ECOs                                                   ; Off                            ; Off                            ;
+; Regenerate Full Fit Report During ECO Compiles                             ; Off                            ; Off                            ;
+; Optimize IOC Register Placement for Timing                                 ; Normal                         ; Normal                         ;
+; Limit to One Fitting Attempt                                               ; Off                            ; Off                            ;
+; Final Placement Optimizations                                              ; Automatically                  ; Automatically                  ;
+; Fitter Aggressive Routability Optimizations                                ; Automatically                  ; Automatically                  ;
+; Fitter Initial Placement Seed                                              ; 1                              ; 1                              ;
+; Periphery to Core Placement and Routing Optimization                       ; Off                            ; Off                            ;
+; Slow Slew Rate                                                             ; Off                            ; Off                            ;
+; PCI I/O                                                                    ; Off                            ; Off                            ;
+; Weak Pull-Up Resistor                                                      ; Off                            ; Off                            ;
+; Enable Bus-Hold Circuitry                                                  ; Off                            ; Off                            ;
+; Auto Delay Chains                                                          ; On                             ; On                             ;
+; Auto Delay Chains for High Fanout Input Pins                               ; Off                            ; Off                            ;
+; Perform Physical Synthesis for Combinational Logic for Performance         ; Off                            ; Off                            ;
+; Perform Register Duplication for Performance                               ; Off                            ; Off                            ;
+; Perform Register Retiming for Performance                                  ; Off                            ; Off                            ;
+; Perform Asynchronous Signal Pipelining                                     ; Off                            ; Off                            ;
+; Fitter Effort                                                              ; Auto Fit                       ; Auto Fit                       ;
+; Physical Synthesis Effort Level                                            ; Normal                         ; Normal                         ;
+; Logic Cell Insertion - Logic Duplication                                   ; Auto                           ; Auto                           ;
+; Auto Register Duplication                                                  ; Auto                           ; Auto                           ;
+; Auto Global Clock                                                          ; On                             ; On                             ;
+; Auto Global Register Control Signals                                       ; On                             ; On                             ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off                            ; Off                            ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/output_files/ReactionGame.pin.
+
+
++---------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                       ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Total logic elements                        ; 293 / 1,270 ( 23 % )  ;
+;     -- Combinational with no register       ; 124                   ;
+;     -- Register only                        ; 23                    ;
+;     -- Combinational with a register        ; 146                   ;
+;                                             ;                       ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 80                    ;
+;     -- 3 input functions                    ; 49                    ;
+;     -- 2 input functions                    ; 85                    ;
+;     -- 1 input functions                    ; 55                    ;
+;     -- 0 input functions                    ; 1                     ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 262                   ;
+;     -- arithmetic mode                      ; 31                    ;
+;     -- qfbk mode                            ; 49                    ;
+;     -- register cascade mode                ; 0                     ;
+;     -- synchronous clear/load mode          ; 53                    ;
+;     -- asynchronous clear/load mode         ; 100                   ;
+;                                             ;                       ;
+; Total registers                             ; 169 / 1,270 ( 13 % )  ;
+; Total LABs                                  ; 48 / 127 ( 38 % )     ;
+; Logic elements in carry chains              ; 32                    ;
+; Virtual pins                                ; 0                     ;
+; I/O pins                                    ; 30 / 114 ( 26 % )     ;
+;     -- Clock pins                           ; 1 / 4 ( 25 % )        ;
+;                                             ;                       ;
+; Global signals                              ; 4                     ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )         ;
+;                                             ;                       ;
+;     -- Total Fixed Point DSP Blocks         ; 0                     ;
+;     -- Total Floating Point DSP Blocks      ; 0                     ;
+;                                             ;                       ;
+; Global clocks                               ; 4 / 4 ( 100 % )       ;
+; JTAGs                                       ; 0 / 1 ( 0 % )         ;
+; Average interconnect usage (total/H/V)      ; 9.3% / 10.0% / 8.6%   ;
+; Peak interconnect usage (total/H/V)         ; 11.9% / 13.0% / 10.8% ;
+; Maximum fan-out                             ; 93                    ;
+; Highest non-global fan-out                  ; 93                    ;
+; Total fan-out                               ; 1072                  ;
+; Average fan-out                             ; 3.32                  ;
++---------------------------------------------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                          ;
++-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+----------------+
+; Name        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ; Slow Slew Rate ;
++-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+----------------+
+; masterclock ; 89    ; 3        ; 17           ; 5            ; 1           ; 16                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ; no             ;
+; pwreset     ; 48    ; 4        ; 7            ; 3            ; 3           ; 48                    ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ; no             ;
+; reset1      ; 45    ; 4        ; 6            ; 3            ; 0           ; 93                    ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ; no             ;
+; switch1     ; 144   ; 2        ; 1            ; 11           ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ; no             ;
++-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                                       ;
++-----------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; Name            ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++-----------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; b11             ; 102   ; 3        ; 17           ; 7            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; b12             ; 104   ; 3        ; 17           ; 8            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; go              ; 57    ; 4        ; 8            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd1[0]         ; 76    ; 3        ; 17           ; 2            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd1[1]         ; 80    ; 3        ; 17           ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd1[2]         ; 84    ; 3        ; 17           ; 4            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd1[3]         ; 86    ; 3        ; 17           ; 5            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd1[4]         ; 88    ; 3        ; 17           ; 5            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd1[5]         ; 94    ; 3        ; 17           ; 6            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd1[6]         ; 96    ; 3        ; 17           ; 6            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd1[7]         ; 98    ; 3        ; 17           ; 6            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd_en          ; 74    ; 3        ; 17           ; 1            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd_rs          ; 70    ; 4        ; 15           ; 0            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; lcd_rw          ; 72    ; 4        ; 16           ; 0            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; ledoutput       ; 58    ; 4        ; 9            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[0]  ; 1     ; 1        ; 0            ; 10           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[10] ; 15    ; 1        ; 0            ; 7            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[1]  ; 2     ; 1        ; 0            ; 10           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[2]  ; 3     ; 1        ; 0            ; 10           ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[3]  ; 4     ; 1        ; 0            ; 9            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[4]  ; 5     ; 1        ; 0            ; 9            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[5]  ; 6     ; 1        ; 0            ; 9            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[6]  ; 7     ; 1        ; 0            ; 8            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[7]  ; 12    ; 1        ; 0            ; 7            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[8]  ; 13    ; 1        ; 0            ; 7            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; tottimeout1[9]  ; 14    ; 1        ; 0            ; 7            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
++-----------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+
+
++------------------------------------------------------------+
+; I/O Bank Usage                                             ;
++----------+------------------+---------------+--------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
++----------+------------------+---------------+--------------+
+; 1        ; 11 / 25 ( 44 % ) ; 3.3V          ; --           ;
+; 2        ; 1 / 30 ( 3 % )   ; 3.3V          ; --           ;
+; 3        ; 12 / 29 ( 41 % ) ; 3.3V          ; --           ;
+; 4        ; 6 / 30 ( 20 % )  ; 3.3V          ; --           ;
++----------+------------------+---------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                                                              ;
++----------+------------+----------+-----------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage  ; Dir.   ; I/O Standard ; Voltage ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
++----------+------------+----------+-----------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+; 1        ; 2          ; 1        ; tottimeout1[0]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 2        ; 3          ; 1        ; tottimeout1[1]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 3        ; 5          ; 1        ; tottimeout1[2]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 4        ; 7          ; 1        ; tottimeout1[3]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 5        ; 9          ; 1        ; tottimeout1[4]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 6        ; 10         ; 1        ; tottimeout1[5]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 7        ; 14         ; 1        ; tottimeout1[6]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 8        ; 15         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 9        ;            ; 1        ; VCCIO1          ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 10       ;            ;          ; GNDIO           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 11       ;            ;          ; GNDIO           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 12       ; 21         ; 1        ; tottimeout1[7]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 13       ; 22         ; 1        ; tottimeout1[8]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 14       ; 23         ; 1        ; tottimeout1[9]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 15       ; 24         ; 1        ; tottimeout1[10] ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 16       ; 25         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 17       ;            ;          ; GNDINT          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 18       ; 26         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 19       ;            ;          ; VCCINT          ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
+; 20       ; 27         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 21       ; 28         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 22       ; 29         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 23       ; 30         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 24       ; 31         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 25       ;            ; 1        ; VCCIO1          ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 26       ;            ;          ; GNDIO           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 27       ; 33         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 28       ; 36         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 29       ; 37         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 30       ; 41         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 31       ; 44         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 32       ; 47         ; 1        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 33       ; 50         ; 1        ; #TMS            ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; 34       ; 51         ; 1        ; #TDI            ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; 35       ; 52         ; 1        ; #TCK            ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; 36       ; 53         ; 1        ; #TDO            ; output ;              ;         ; --         ;                 ; --       ; --           ;
+; 37       ; 56         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 38       ; 57         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 39       ; 60         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 40       ; 62         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 41       ; 63         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 42       ; 67         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 43       ; 68         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 44       ; 69         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 45       ; 74         ; 4        ; reset1          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 46       ;            ; 4        ; VCCIO4          ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 47       ;            ;          ; GNDIO           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 48       ; 75         ; 4        ; pwreset         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 49       ; 76         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 50       ; 77         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 51       ; 78         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 52       ; 79         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 53       ; 80         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 54       ;            ;          ; GNDINT          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 55       ; 81         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 56       ;            ;          ; VCCINT          ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
+; 57       ; 82         ; 4        ; go              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 58       ; 83         ; 4        ; ledoutput       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 59       ; 84         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 60       ; 85         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 61       ; 86         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 62       ; 87         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 63       ; 88         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 64       ;            ; 4        ; VCCIO4          ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 65       ;            ;          ; GNDIO           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 66       ; 91         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 67       ; 92         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 68       ; 95         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 69       ; 98         ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 70       ; 101        ; 4        ; lcd_rs          ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 71       ; 104        ; 4        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 72       ; 107        ; 4        ; lcd_rw          ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 73       ; 111        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 74       ; 112        ; 3        ; lcd_en          ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 75       ; 113        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 76       ; 115        ; 3        ; lcd1[0]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 77       ; 118        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 78       ;            ;          ; GNDIO           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 79       ; 123        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 80       ; 124        ; 3        ; lcd1[1]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 81       ; 127        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 82       ;            ; 3        ; VCCIO3          ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 83       ;            ;          ; GNDIO           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 84       ; 129        ; 3        ; lcd1[2]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 85       ; 130        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 86       ; 131        ; 3        ; lcd1[3]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 87       ; 132        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 88       ; 133        ; 3        ; lcd1[4]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 89       ; 134        ; 3        ; masterclock     ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 90       ;            ;          ; VCCINT          ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
+; 91       ; 135        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 92       ;            ;          ; GNDINT          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 93       ; 136        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 94       ; 137        ; 3        ; lcd1[5]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 95       ; 138        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 96       ; 139        ; 3        ; lcd1[6]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 97       ; 140        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 98       ; 141        ; 3        ; lcd1[7]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 99       ;            ;          ; GNDIO           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 100      ;            ; 3        ; VCCIO3          ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 101      ; 142        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 102      ; 146        ; 3        ; b11             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 103      ; 147        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 104      ; 151        ; 3        ; b12             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 105      ; 152        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 106      ; 154        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 107      ; 156        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 108      ; 158        ; 3        ; GND*            ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 109      ; 164        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 110      ; 165        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 111      ; 166        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 112      ; 171        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 113      ; 174        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 114      ; 177        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 115      ;            ;          ; GNDIO           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 116      ;            ; 2        ; VCCIO2          ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 117      ; 180        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 118      ; 181        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 119      ; 182        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 120      ; 183        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 121      ; 184        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 122      ; 185        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 123      ; 186        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 124      ; 187        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 125      ; 188        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 126      ;            ;          ; VCCINT          ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
+; 127      ; 189        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 128      ;            ;          ; GNDINT          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 129      ; 190        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 130      ; 191        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 131      ; 192        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 132      ; 193        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 133      ; 194        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 134      ; 195        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 135      ;            ;          ; GNDIO           ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 136      ;            ; 2        ; VCCIO2          ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 137      ; 199        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 138      ; 200        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 139      ; 201        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 140      ; 204        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 141      ; 205        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 142      ; 208        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 143      ; 212        ; 2        ; GND*            ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 144      ; 215        ; 2        ; switch1         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
++----------+------------+----------+-----------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++-------------------------------------------------------------+
+; Output Pin Default Load For Reported TCO                    ;
++----------------------------+-------+------------------------+
+; I/O Standard               ; Load  ; Termination Resistance ;
++----------------------------+-------+------------------------+
+; 3.3-V LVTTL                ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS               ; 10 pF ; Not Available          ;
+; 2.5 V                      ; 10 pF ; Not Available          ;
+; 1.8 V                      ; 10 pF ; Not Available          ;
+; 1.5 V                      ; 10 pF ; Not Available          ;
+; 3.3V Schmitt Trigger Input ; 10 pF ; Not Available          ;
+; 2.5V Schmitt Trigger Input ; 10 pF ; Not Available          ;
+; 1.2 V                      ; 10 pF ; Not Available          ;
+; LVDS_E_3R                  ; 10 pF ; Not Available          ;
+; RSDS_E_3R                  ; 10 pF ; Not Available          ;
+; 3.3-V PCI                  ; 10 pF ; 25 Ohm (Parallel)      ;
++----------------------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                         ;
++------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node         ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                 ; Entity Name    ; Library Name ;
++------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------+----------------+--------------+
+; |ReactionGame                      ; 293 (76)    ; 169          ; 0          ; 30   ; 0            ; 124 (38)     ; 23 (21)           ; 146 (17)         ; 32 (32)         ; 31 (11)    ; |ReactionGame                                                                                       ; ReactionGame   ; work         ;
+;    |Game:game1|                    ; 136 (12)    ; 84           ; 0          ; 0    ; 0            ; 52 (8)       ; 1 (0)             ; 83 (4)           ; 0 (0)           ; 18 (15)    ; |ReactionGame|Game:game1                                                                            ; Game           ; work         ;
+;       |CounterCheck:checker1|      ; 47 (0)      ; 27           ; 0          ; 0    ; 0            ; 20 (0)       ; 0 (0)             ; 27 (0)           ; 0 (0)           ; 1 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1                                                      ; CounterCheck   ; work         ;
+;          |DelayAdder:counter1|     ; 15 (0)      ; 11           ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 11 (0)           ; 0 (0)           ; 1 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1                                  ; DelayAdder     ; work         ;
+;             |D_FF:\random:0:twox|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:0:twox              ; D_FF           ; work         ;
+;             |D_FF:\random:10:twox| ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:10:twox             ; D_FF           ; work         ;
+;             |D_FF:\random:1:twox|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:1:twox              ; D_FF           ; work         ;
+;             |D_FF:\random:2:twox|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:2:twox              ; D_FF           ; work         ;
+;             |D_FF:\random:3:twox|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:3:twox              ; D_FF           ; work         ;
+;             |D_FF:\random:4:twox|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:4:twox              ; D_FF           ; work         ;
+;             |D_FF:\random:5:twox|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:5:twox              ; D_FF           ; work         ;
+;             |D_FF:\random:6:twox|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:6:twox              ; D_FF           ; work         ;
+;             |D_FF:\random:7:twox|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:7:twox              ; D_FF           ; work         ;
+;             |D_FF:\random:8:twox|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:8:twox              ; D_FF           ; work         ;
+;             |D_FF:\random:9:twox|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:9:twox              ; D_FF           ; work         ;
+;             |ElevenBitAdder:add1|  ; 4 (0)       ; 0            ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 1 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|ElevenBitAdder:add1              ; ElevenBitAdder ; work         ;
+;                |OneBitAdd:a1|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|ElevenBitAdder:add1|OneBitAdd:a1 ; OneBitAdd      ; work         ;
+;                |OneBitAdd:a2|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 1 (1)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|ElevenBitAdder:add1|OneBitAdd:a2 ; OneBitAdd      ; work         ;
+;                |OneBitAdd:a5|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|ElevenBitAdder:add1|OneBitAdd:a5 ; OneBitAdd      ; work         ;
+;                |OneBitAdd:a8|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|DelayAdder:counter1|ElevenBitAdder:add1|OneBitAdd:a8 ; OneBitAdd      ; work         ;
+;          |oneclock:clock1|         ; 32 (0)      ; 16           ; 0          ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 16 (0)           ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1                                      ; oneclock       ; work         ;
+;             |dbtwo:\Q1:0:dbtwox|   ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox                   ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1        ; D_FF           ; work         ;
+;             |dbtwo:\Q1:10:dbtwox|  ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:10:dbtwox                  ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:10:dbtwox|D_FF:D_FF1       ; D_FF           ; work         ;
+;             |dbtwo:\Q1:11:dbtwox|  ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:11:dbtwox                  ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:11:dbtwox|D_FF:D_FF1       ; D_FF           ; work         ;
+;             |dbtwo:\Q1:12:dbtwox|  ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:12:dbtwox                  ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:12:dbtwox|D_FF:D_FF1       ; D_FF           ; work         ;
+;             |dbtwo:\Q1:13:dbtwox|  ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:13:dbtwox                  ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:13:dbtwox|D_FF:D_FF1       ; D_FF           ; work         ;
+;             |dbtwo:\Q1:14:dbtwox|  ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:14:dbtwox                  ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:14:dbtwox|D_FF:D_FF1       ; D_FF           ; work         ;
+;             |dbtwo:\Q1:15:dbtwox|  ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:15:dbtwox                  ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:15:dbtwox|D_FF:D_FF1       ; D_FF           ; work         ;
+;             |dbtwo:\Q1:1:dbtwox|   ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:1:dbtwox                   ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:1:dbtwox|D_FF:D_FF1        ; D_FF           ; work         ;
+;             |dbtwo:\Q1:2:dbtwox|   ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:2:dbtwox                   ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:2:dbtwox|D_FF:D_FF1        ; D_FF           ; work         ;
+;             |dbtwo:\Q1:3:dbtwox|   ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:3:dbtwox                   ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:3:dbtwox|D_FF:D_FF1        ; D_FF           ; work         ;
+;             |dbtwo:\Q1:4:dbtwox|   ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:4:dbtwox                   ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:4:dbtwox|D_FF:D_FF1        ; D_FF           ; work         ;
+;             |dbtwo:\Q1:5:dbtwox|   ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:5:dbtwox                   ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:5:dbtwox|D_FF:D_FF1        ; D_FF           ; work         ;
+;             |dbtwo:\Q1:6:dbtwox|   ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:6:dbtwox                   ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:6:dbtwox|D_FF:D_FF1        ; D_FF           ; work         ;
+;             |dbtwo:\Q1:7:dbtwox|   ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:7:dbtwox                   ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:7:dbtwox|D_FF:D_FF1        ; D_FF           ; work         ;
+;             |dbtwo:\Q1:8:dbtwox|   ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:8:dbtwox                   ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:8:dbtwox|D_FF:D_FF1        ; D_FF           ; work         ;
+;             |dbtwo:\Q1:9:dbtwox|   ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:9:dbtwox                   ; dbtwo          ; work         ;
+;                |D_FF:D_FF1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:9:dbtwox|D_FF:D_FF1        ; D_FF           ; work         ;
+;       |Debouncer:debounce|         ; 2 (0)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|Debouncer:debounce                                                         ; Debouncer      ; work         ;
+;          |D_FF:D_FF0|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|Debouncer:debounce|D_FF:D_FF0                                              ; D_FF           ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|Debouncer:debounce|D_FF:D_FF1                                              ; D_FF           ; work         ;
+;       |DelayAdder:da|              ; 15 (0)      ; 11           ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 11 (0)           ; 0 (0)           ; 2 (0)      ; |ReactionGame|Game:game1|DelayAdder:da                                                              ; DelayAdder     ; work         ;
+;          |D_FF:\random:0:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:0:twox                                          ; D_FF           ; work         ;
+;          |D_FF:\random:10:twox|    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:10:twox                                         ; D_FF           ; work         ;
+;          |D_FF:\random:1:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:1:twox                                          ; D_FF           ; work         ;
+;          |D_FF:\random:2:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:2:twox                                          ; D_FF           ; work         ;
+;          |D_FF:\random:3:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:3:twox                                          ; D_FF           ; work         ;
+;          |D_FF:\random:4:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:4:twox                                          ; D_FF           ; work         ;
+;          |D_FF:\random:5:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:5:twox                                          ; D_FF           ; work         ;
+;          |D_FF:\random:6:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:6:twox                                          ; D_FF           ; work         ;
+;          |D_FF:\random:7:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:7:twox                                          ; D_FF           ; work         ;
+;          |D_FF:\random:8:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:8:twox                                          ; D_FF           ; work         ;
+;          |D_FF:\random:9:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|D_FF:\random:9:twox                                          ; D_FF           ; work         ;
+;          |ElevenBitAdder:add1|     ; 4 (0)       ; 0            ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 2 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|ElevenBitAdder:add1                                          ; ElevenBitAdder ; work         ;
+;             |OneBitAdd:a1|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|ElevenBitAdder:add1|OneBitAdd:a1                             ; OneBitAdd      ; work         ;
+;             |OneBitAdd:a2|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 1 (1)      ; |ReactionGame|Game:game1|DelayAdder:da|ElevenBitAdder:add1|OneBitAdd:a2                             ; OneBitAdd      ; work         ;
+;             |OneBitAdd:a3|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|ElevenBitAdder:add1|OneBitAdd:a3                             ; OneBitAdd      ; work         ;
+;             |OneBitAdd:a5|         ; 0 (0)       ; 0            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 1 (1)      ; |ReactionGame|Game:game1|DelayAdder:da|ElevenBitAdder:add1|OneBitAdd:a5                             ; OneBitAdd      ; work         ;
+;             |OneBitAdd:a8|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|DelayAdder:da|ElevenBitAdder:add1|OneBitAdd:a8                             ; OneBitAdd      ; work         ;
+;       |GameOverFSM:gameisover1|    ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|GameOverFSM:gameisover1                                                    ; GameOverFSM    ; work         ;
+;          |D_FF:dff|                ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|GameOverFSM:gameisover1|D_FF:dff                                           ; D_FF           ; work         ;
+;       |SamplerOutput:outsample|    ; 11 (0)      ; 11           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 11 (0)           ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample                                                    ; SamplerOutput  ; work         ;
+;          |D_FF:\random:0:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:0:twox                                ; D_FF           ; work         ;
+;          |D_FF:\random:10:twox|    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:10:twox                               ; D_FF           ; work         ;
+;          |D_FF:\random:1:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:1:twox                                ; D_FF           ; work         ;
+;          |D_FF:\random:2:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:2:twox                                ; D_FF           ; work         ;
+;          |D_FF:\random:3:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:3:twox                                ; D_FF           ; work         ;
+;          |D_FF:\random:4:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:4:twox                                ; D_FF           ; work         ;
+;          |D_FF:\random:5:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:5:twox                                ; D_FF           ; work         ;
+;          |D_FF:\random:6:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:6:twox                                ; D_FF           ; work         ;
+;          |D_FF:\random:7:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:7:twox                                ; D_FF           ; work         ;
+;          |D_FF:\random:8:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:8:twox                                ; D_FF           ; work         ;
+;          |D_FF:\random:9:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|SamplerOutput:outsample|D_FF:\random:9:twox                                ; D_FF           ; work         ;
+;       |ledfsm:ledfsm1|             ; 5 (3)       ; 2            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|ledfsm:ledfsm1                                                             ; ledfsm         ; work         ;
+;          |D_FF:DFF0|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|ledfsm:ledfsm1|D_FF:DFF0                                                   ; D_FF           ; work         ;
+;          |D_FF:DFF1|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|ledfsm:ledfsm1|D_FF:DFF1                                                   ; D_FF           ; work         ;
+;       |lfsr:rand1|                 ; 10 (0)      ; 10           ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (0)             ; 9 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1                                                                 ; lfsr           ; work         ;
+;          |D_FF:dff0|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1|D_FF:dff0                                                       ; D_FF           ; work         ;
+;          |D_FF:dff1|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1|D_FF:dff1                                                       ; D_FF           ; work         ;
+;          |D_FF:dff2|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1|D_FF:dff2                                                       ; D_FF           ; work         ;
+;          |D_FF:dff3|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1|D_FF:dff3                                                       ; D_FF           ; work         ;
+;          |D_FF:dff4|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1|D_FF:dff4                                                       ; D_FF           ; work         ;
+;          |D_FF:dff5|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1|D_FF:dff5                                                       ; D_FF           ; work         ;
+;          |D_FF:dff6|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1|D_FF:dff6                                                       ; D_FF           ; work         ;
+;          |D_FF:dff7|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1|D_FF:dff7                                                       ; D_FF           ; work         ;
+;          |D_FF:dff8|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1|D_FF:dff8                                                       ; D_FF           ; work         ;
+;          |D_FF:dff9|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|lfsr:rand1|D_FF:dff9                                                       ; D_FF           ; work         ;
+;       |oneclock:onclk|             ; 32 (0)      ; 16           ; 0          ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 16 (0)           ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk                                                             ; oneclock       ; work         ;
+;          |dbtwo:\Q1:0:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox                                          ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1                               ; D_FF           ; work         ;
+;          |dbtwo:\Q1:10:dbtwox|     ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:10:dbtwox                                         ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:10:dbtwox|D_FF:D_FF1                              ; D_FF           ; work         ;
+;          |dbtwo:\Q1:11:dbtwox|     ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:11:dbtwox                                         ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:11:dbtwox|D_FF:D_FF1                              ; D_FF           ; work         ;
+;          |dbtwo:\Q1:12:dbtwox|     ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:12:dbtwox                                         ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:12:dbtwox|D_FF:D_FF1                              ; D_FF           ; work         ;
+;          |dbtwo:\Q1:13:dbtwox|     ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:13:dbtwox                                         ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:13:dbtwox|D_FF:D_FF1                              ; D_FF           ; work         ;
+;          |dbtwo:\Q1:14:dbtwox|     ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:14:dbtwox                                         ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:14:dbtwox|D_FF:D_FF1                              ; D_FF           ; work         ;
+;          |dbtwo:\Q1:15:dbtwox|     ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:15:dbtwox                                         ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:15:dbtwox|D_FF:D_FF1                              ; D_FF           ; work         ;
+;          |dbtwo:\Q1:1:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:1:dbtwox                                          ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:1:dbtwox|D_FF:D_FF1                               ; D_FF           ; work         ;
+;          |dbtwo:\Q1:2:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:2:dbtwox                                          ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:2:dbtwox|D_FF:D_FF1                               ; D_FF           ; work         ;
+;          |dbtwo:\Q1:3:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:3:dbtwox                                          ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:3:dbtwox|D_FF:D_FF1                               ; D_FF           ; work         ;
+;          |dbtwo:\Q1:4:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:4:dbtwox                                          ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:4:dbtwox|D_FF:D_FF1                               ; D_FF           ; work         ;
+;          |dbtwo:\Q1:5:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:5:dbtwox                                          ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:5:dbtwox|D_FF:D_FF1                               ; D_FF           ; work         ;
+;          |dbtwo:\Q1:6:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:6:dbtwox                                          ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:6:dbtwox|D_FF:D_FF1                               ; D_FF           ; work         ;
+;          |dbtwo:\Q1:7:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:7:dbtwox                                          ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:7:dbtwox|D_FF:D_FF1                               ; D_FF           ; work         ;
+;          |dbtwo:\Q1:8:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:8:dbtwox                                          ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:8:dbtwox|D_FF:D_FF1                               ; D_FF           ; work         ;
+;          |dbtwo:\Q1:9:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:9:dbtwox                                          ; dbtwo          ; work         ;
+;             |D_FF:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Game:game1|oneclock:onclk|dbtwo:\Q1:9:dbtwox|D_FF:D_FF1                               ; D_FF           ; work         ;
+;    |lcd_controller:display|        ; 49 (49)     ; 31           ; 0          ; 0    ; 0            ; 18 (18)      ; 1 (1)             ; 30 (30)          ; 0 (0)           ; 2 (2)      ; |ReactionGame|lcd_controller:display                                                                ; lcd_controller ; work         ;
+;    |oneclock:oonclk|               ; 32 (0)      ; 16           ; 0          ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 16 (0)           ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk                                                                       ; oneclock       ; work         ;
+;       |dbtwo:\Q1:0:dbtwox|         ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:0:dbtwox                                                    ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:0:dbtwox|D_FF:D_FF1                                         ; D_FF           ; work         ;
+;       |dbtwo:\Q1:10:dbtwox|        ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:10:dbtwox                                                   ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:10:dbtwox|D_FF:D_FF1                                        ; D_FF           ; work         ;
+;       |dbtwo:\Q1:11:dbtwox|        ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:11:dbtwox                                                   ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:11:dbtwox|D_FF:D_FF1                                        ; D_FF           ; work         ;
+;       |dbtwo:\Q1:12:dbtwox|        ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:12:dbtwox                                                   ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:12:dbtwox|D_FF:D_FF1                                        ; D_FF           ; work         ;
+;       |dbtwo:\Q1:13:dbtwox|        ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:13:dbtwox                                                   ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:13:dbtwox|D_FF:D_FF1                                        ; D_FF           ; work         ;
+;       |dbtwo:\Q1:14:dbtwox|        ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:14:dbtwox                                                   ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:14:dbtwox|D_FF:D_FF1                                        ; D_FF           ; work         ;
+;       |dbtwo:\Q1:15:dbtwox|        ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:15:dbtwox                                                   ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:15:dbtwox|D_FF:D_FF1                                        ; D_FF           ; work         ;
+;       |dbtwo:\Q1:1:dbtwox|         ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:1:dbtwox                                                    ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:1:dbtwox|D_FF:D_FF1                                         ; D_FF           ; work         ;
+;       |dbtwo:\Q1:2:dbtwox|         ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:2:dbtwox                                                    ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:2:dbtwox|D_FF:D_FF1                                         ; D_FF           ; work         ;
+;       |dbtwo:\Q1:3:dbtwox|         ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:3:dbtwox                                                    ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:3:dbtwox|D_FF:D_FF1                                         ; D_FF           ; work         ;
+;       |dbtwo:\Q1:4:dbtwox|         ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:4:dbtwox                                                    ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:4:dbtwox|D_FF:D_FF1                                         ; D_FF           ; work         ;
+;       |dbtwo:\Q1:5:dbtwox|         ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:5:dbtwox                                                    ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:5:dbtwox|D_FF:D_FF1                                         ; D_FF           ; work         ;
+;       |dbtwo:\Q1:6:dbtwox|         ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:6:dbtwox                                                    ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:6:dbtwox|D_FF:D_FF1                                         ; D_FF           ; work         ;
+;       |dbtwo:\Q1:7:dbtwox|         ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:7:dbtwox                                                    ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:7:dbtwox|D_FF:D_FF1                                         ; D_FF           ; work         ;
+;       |dbtwo:\Q1:8:dbtwox|         ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:8:dbtwox                                                    ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:8:dbtwox|D_FF:D_FF1                                         ; D_FF           ; work         ;
+;       |dbtwo:\Q1:9:dbtwox|         ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:9:dbtwox                                                    ; dbtwo          ; work         ;
+;          |D_FF:D_FF1|              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|oneclock:oonclk|dbtwo:\Q1:9:dbtwox|D_FF:D_FF1                                         ; D_FF           ; work         ;
++------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------+
+; Delay Chain Summary                        ;
++-----------------+----------+---------------+
+; Name            ; Pin Type ; Pad to Core 0 ;
++-----------------+----------+---------------+
+; lcd_rw          ; Output   ; --            ;
+; lcd_en          ; Output   ; --            ;
+; lcd_rs          ; Output   ; --            ;
+; lcd1[0]         ; Output   ; --            ;
+; lcd1[1]         ; Output   ; --            ;
+; lcd1[2]         ; Output   ; --            ;
+; lcd1[3]         ; Output   ; --            ;
+; lcd1[4]         ; Output   ; --            ;
+; lcd1[5]         ; Output   ; --            ;
+; lcd1[6]         ; Output   ; --            ;
+; lcd1[7]         ; Output   ; --            ;
+; b11             ; Output   ; --            ;
+; b12             ; Output   ; --            ;
+; tottimeout1[0]  ; Output   ; --            ;
+; tottimeout1[1]  ; Output   ; --            ;
+; tottimeout1[2]  ; Output   ; --            ;
+; tottimeout1[3]  ; Output   ; --            ;
+; tottimeout1[4]  ; Output   ; --            ;
+; tottimeout1[5]  ; Output   ; --            ;
+; tottimeout1[6]  ; Output   ; --            ;
+; tottimeout1[7]  ; Output   ; --            ;
+; tottimeout1[8]  ; Output   ; --            ;
+; tottimeout1[9]  ; Output   ; --            ;
+; tottimeout1[10] ; Output   ; --            ;
+; ledoutput       ; Output   ; --            ;
+; go              ; Output   ; --            ;
+; reset1          ; Input    ; (0)           ;
+; pwreset         ; Input    ; (0)           ;
+; masterclock     ; Input    ; (0)           ;
+; switch1         ; Input    ; (0)           ;
++-----------------+----------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                   ;
++-----------------------------------------------------------------------------+--------------+---------+-----------------------------------------+--------+----------------------+------------------+
+; Name                                                                        ; Location     ; Fan-Out ; Usage                                   ; Global ; Global Resource Used ; Global Line Name ;
++-----------------------------------------------------------------------------+--------------+---------+-----------------------------------------+--------+----------------------+------------------+
+; Equal0~10                                                                   ; LC_X12_Y8_N5 ; 4       ; Sync. load                              ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:0:dbtwox|outclk  ; LC_X8_Y7_N4  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:10:dbtwox|outclk ; LC_X7_Y5_N3  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:11:dbtwox|outclk ; LC_X7_Y5_N5  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:12:dbtwox|outclk ; LC_X7_Y6_N6  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:13:dbtwox|outclk ; LC_X4_Y7_N6  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:14:dbtwox|outclk ; LC_X6_Y7_N9  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:15:dbtwox|outclk ; LC_X6_Y7_N7  ; 11      ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:1:dbtwox|outclk  ; LC_X8_Y7_N5  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:2:dbtwox|outclk  ; LC_X9_Y7_N9  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:3:dbtwox|outclk  ; LC_X9_Y7_N6  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:4:dbtwox|outclk  ; LC_X8_Y6_N4  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:5:dbtwox|outclk  ; LC_X8_Y5_N8  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:6:dbtwox|outclk  ; LC_X8_Y5_N5  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:7:dbtwox|outclk  ; LC_X7_Y5_N8  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:8:dbtwox|outclk  ; LC_X7_Y5_N9  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|CounterCheck:checker1|oneclock:clock1|dbtwo:\Q1:9:dbtwox|outclk  ; LC_X6_Y5_N4  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|GameOverFSM:gameisover1|clk1                                     ; LC_X9_Y7_N8  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|addclock                                                         ; LC_X10_Y7_N4 ; 11      ; Clock                                   ; yes    ; Global Clock         ; GCLK1            ;
+; Game:game1|clkin2                                                           ; LC_X10_Y7_N7 ; 11      ; Clock                                   ; yes    ; Global Clock         ; GCLK0            ;
+; Game:game1|ledfsm:ledfsm1|led                                               ; LC_X10_Y7_N6 ; 8       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|ledfsm:ledfsm1|led~1                                             ; LC_X7_Y7_N2  ; 29      ; Async. clear                            ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:0:dbtwox|outclk                         ; LC_X5_Y6_N9  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:10:dbtwox|outclk                        ; LC_X3_Y6_N7  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:11:dbtwox|outclk                        ; LC_X2_Y6_N7  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:12:dbtwox|outclk                        ; LC_X3_Y6_N6  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:13:dbtwox|outclk                        ; LC_X3_Y6_N3  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:14:dbtwox|outclk                        ; LC_X3_Y6_N9  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:15:dbtwox|outclk                        ; LC_X5_Y6_N0  ; 3       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:1:dbtwox|outclk                         ; LC_X5_Y6_N3  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:2:dbtwox|outclk                         ; LC_X5_Y6_N8  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:3:dbtwox|outclk                         ; LC_X6_Y6_N5  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:4:dbtwox|outclk                         ; LC_X7_Y6_N3  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:5:dbtwox|outclk                         ; LC_X7_Y6_N1  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:6:dbtwox|outclk                         ; LC_X6_Y6_N8  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:7:dbtwox|outclk                         ; LC_X6_Y6_N6  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:8:dbtwox|outclk                         ; LC_X5_Y6_N2  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|oneclock:onclk|dbtwo:\Q1:9:dbtwox|outclk                         ; LC_X4_Y5_N5  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; Game:game1|reset                                                            ; LC_X5_Y6_N1  ; 48      ; Async. clear                            ; no     ; --                   ; --               ;
+; i[0]~0                                                                      ; LC_X12_Y8_N4 ; 6       ; Clock enable                            ; no     ; --                   ; --               ;
+; lcd_controller:display|ack                                                  ; LC_X12_Y6_N2 ; 33      ; Clock enable                            ; no     ; --                   ; --               ;
+; lcd_controller:display|lcd[4]~1                                             ; LC_X12_Y6_N8 ; 2       ; Clock enable                            ; no     ; --                   ; --               ;
+; lcd_controller:display|state~29                                             ; LC_X10_Y6_N8 ; 5       ; Clock enable                            ; no     ; --                   ; --               ;
+; lcd_controller:display|state~30                                             ; LC_X11_Y5_N3 ; 3       ; Clock enable                            ; no     ; --                   ; --               ;
+; masterclock                                                                 ; PIN_89       ; 16      ; Clock                                   ; yes    ; Global Clock         ; GCLK2            ;
+; oneclock:oonclk|dbtwo:\Q1:0:dbtwox|outclk                                   ; LC_X7_Y4_N6  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:10:dbtwox|outclk                                  ; LC_X6_Y5_N5  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:11:dbtwox|outclk                                  ; LC_X7_Y4_N7  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:12:dbtwox|outclk                                  ; LC_X7_Y4_N4  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:13:dbtwox|outclk                                  ; LC_X7_Y4_N3  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:14:dbtwox|outclk                                  ; LC_X7_Y4_N8  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:15:dbtwox|outclk                                  ; LC_X12_Y3_N2 ; 69      ; Clock                                   ; yes    ; Global Clock         ; GCLK3            ;
+; oneclock:oonclk|dbtwo:\Q1:1:dbtwox|outclk                                   ; LC_X5_Y4_N3  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:2:dbtwox|outclk                                   ; LC_X5_Y4_N6  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:3:dbtwox|outclk                                   ; LC_X5_Y4_N0  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:4:dbtwox|outclk                                   ; LC_X6_Y8_N4  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:5:dbtwox|outclk                                   ; LC_X6_Y8_N6  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:6:dbtwox|outclk                                   ; LC_X5_Y8_N9  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:7:dbtwox|outclk                                   ; LC_X6_Y4_N6  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:8:dbtwox|outclk                                   ; LC_X6_Y4_N7  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; oneclock:oonclk|dbtwo:\Q1:9:dbtwox|outclk                                   ; LC_X5_Y5_N7  ; 1       ; Clock                                   ; no     ; --                   ; --               ;
+; pwreset                                                                     ; PIN_48       ; 48      ; Async. clear                            ; no     ; --                   ; --               ;
+; reset1                                                                      ; PIN_45       ; 93      ; Async. clear, Clock enable, Sync. clear ; no     ; --                   ; --               ;
++-----------------------------------------------------------------------------+--------------+---------+-----------------------------------------+--------+----------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                   ;
++--------------------------------------------+--------------+---------+----------------------+------------------+
+; Name                                       ; Location     ; Fan-Out ; Global Resource Used ; Global Line Name ;
++--------------------------------------------+--------------+---------+----------------------+------------------+
+; Game:game1|addclock                        ; LC_X10_Y7_N4 ; 11      ; Global Clock         ; GCLK1            ;
+; Game:game1|clkin2                          ; LC_X10_Y7_N7 ; 11      ; Global Clock         ; GCLK0            ;
+; masterclock                                ; PIN_89       ; 16      ; Global Clock         ; GCLK2            ;
+; oneclock:oonclk|dbtwo:\Q1:15:dbtwox|outclk ; LC_X12_Y3_N2 ; 69      ; Global Clock         ; GCLK3            ;
++--------------------------------------------+--------------+---------+----------------------+------------------+
+
+
++---------------------------------------------+
+; Routing Usage Summary                       ;
++-----------------------+---------------------+
+; Routing Resource Type ; Usage               ;
++-----------------------+---------------------+
+; C4s                   ; 192 / 2,870 ( 7 % ) ;
+; Direct links          ; 66 / 3,938 ( 2 % )  ;
+; Global clocks         ; 4 / 4 ( 100 % )     ;
+; LAB clocks            ; 17 / 72 ( 24 % )    ;
+; LUT chains            ; 16 / 1,143 ( 1 % )  ;
+; Local interconnects   ; 365 / 3,938 ( 9 % ) ;
+; R4s                   ; 229 / 2,832 ( 8 % ) ;
++-----------------------+---------------------+
+
+
++---------------------------------------------------------------------------+
+; LAB Logic Elements                                                        ;
++--------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 6.10) ; Number of LABs  (Total = 48) ;
++--------------------------------------------+------------------------------+
+; 1                                          ; 4                            ;
+; 2                                          ; 4                            ;
+; 3                                          ; 6                            ;
+; 4                                          ; 6                            ;
+; 5                                          ; 4                            ;
+; 6                                          ; 2                            ;
+; 7                                          ; 1                            ;
+; 8                                          ; 3                            ;
+; 9                                          ; 4                            ;
+; 10                                         ; 14                           ;
++--------------------------------------------+------------------------------+
+
+
++-------------------------------------------------------------------+
+; LAB-wide Signals                                                  ;
++------------------------------------+------------------------------+
+; LAB-wide Signals  (Average = 1.67) ; Number of LABs  (Total = 48) ;
++------------------------------------+------------------------------+
+; 1 Async. clear                     ; 31                           ;
+; 1 Clock                            ; 27                           ;
+; 1 Clock enable                     ; 8                            ;
+; 1 Sync. clear                      ; 1                            ;
+; 1 Sync. load                       ; 1                            ;
+; 2 Async. clears                    ; 2                            ;
+; 2 Clocks                           ; 10                           ;
++------------------------------------+------------------------------+
+
+
++----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 6.90) ; Number of LABs  (Total = 48) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 3                            ;
+; 2                                           ; 5                            ;
+; 3                                           ; 6                            ;
+; 4                                           ; 4                            ;
+; 5                                           ; 5                            ;
+; 6                                           ; 3                            ;
+; 7                                           ; 1                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 4                            ;
+; 10                                          ; 7                            ;
+; 11                                          ; 5                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 1                            ;
+; 14                                          ; 0                            ;
+; 15                                          ; 1                            ;
+; 16                                          ; 1                            ;
+; 17                                          ; 1                            ;
++---------------------------------------------+------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++-------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 4.33) ; Number of LABs  (Total = 48) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 0                            ;
+; 1                                               ; 11                           ;
+; 2                                               ; 13                           ;
+; 3                                               ; 5                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 2                            ;
+; 6                                               ; 2                            ;
+; 7                                               ; 3                            ;
+; 8                                               ; 3                            ;
+; 9                                               ; 2                            ;
+; 10                                              ; 3                            ;
+; 11                                              ; 2                            ;
+; 12                                              ; 0                            ;
+; 13                                              ; 0                            ;
+; 14                                              ; 0                            ;
+; 15                                              ; 1                            ;
++-------------------------------------------------+------------------------------+
+
+
++----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 6.69) ; Number of LABs  (Total = 48) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 7                            ;
+; 3                                           ; 4                            ;
+; 4                                           ; 8                            ;
+; 5                                           ; 5                            ;
+; 6                                           ; 4                            ;
+; 7                                           ; 5                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 2                            ;
+; 10                                          ; 2                            ;
+; 11                                          ; 6                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 0                            ;
+; 15                                          ; 2                            ;
+; 16                                          ; 0                            ;
+; 17                                          ; 0                            ;
+; 18                                          ; 1                            ;
+; 19                                          ; 1                            ;
++---------------------------------------------+------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Fitter Device Options                                                   ;
++----------------------------------------------+--------------------------+
+; Option                                       ; Setting                  ;
++----------------------------------------------+--------------------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off                      ;
+; Enable device-wide reset (DEV_CLRn)          ; Off                      ;
+; Enable device-wide output enable (DEV_OE)    ; Off                      ;
+; Enable INIT_DONE output                      ; Off                      ;
+; Configuration scheme                         ; Passive Serial           ;
+; Reserve all unused pins                      ; As output driving ground ;
++----------------------------------------------+--------------------------+
+
+
++------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary              ;
++-----------------+----------------------+-------------------+
+; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
++-----------------+----------------------+-------------------+
+; I/O             ; reset1               ; 184.0             ;
+; reset1,I/O      ; reset1               ; 87.3              ;
+; I/O             ; reset1,masterclock   ; 10.6              ;
++-----------------+----------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                               ;
++----------------------------------------------------------------------------+----------------------------------------------------------------------------+-------------------+
+; Source Register                                                            ; Destination Register                                                       ; Delay Added in ns ;
++----------------------------------------------------------------------------+----------------------------------------------------------------------------+-------------------+
+; reset1                                                                     ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q                             ; 13.707            ;
+; pwreset                                                                    ; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q                             ; 11.129            ;
+; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q                             ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q                             ; 6.404             ;
+; Game:game1|DelayAdder:da|D_FF:\random:0:twox|Q                             ; Game:game1|DelayAdder:da|D_FF:\random:1:twox|Q                             ; 6.404             ;
+; oneclock:oonclk|dbtwo:\Q1:15:dbtwox|D_FF:D_FF1|Q                           ; i[2]                                                                       ; 5.235             ;
+; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q                             ; Game:game1|DelayAdder:da|D_FF:\random:2:twox|Q                             ; 3.276             ;
+; Game:game1|DelayAdder:da|D_FF:\random:4:twox|Q                             ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q                             ; 3.165             ;
+; Game:game1|DelayAdder:da|D_FF:\random:3:twox|Q                             ; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q                             ; 3.165             ;
+; lcd_controller:display|state.S2                                            ; lcd_controller:display|state.S0                                            ; 3.138             ;
+; lcd_controller:display|count_cmd[1]                                        ; lcd_controller:display|lcd[5]                                              ; 2.086             ;
+; lcd_controller:display|count_cmd[0]                                        ; lcd_controller:display|lcd[5]                                              ; 2.086             ;
+; lcd_controller:display|state.S9                                            ; lcd_controller:display|lcd[5]                                              ; 2.086             ;
+; lcd_controller:display|count_cmd[2]                                        ; lcd_controller:display|lcd[5]                                              ; 2.086             ;
+; lcd_controller:display|state.S0                                            ; lcd_controller:display|lcd[5]                                              ; 2.086             ;
+; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:0:twox|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:0:twox|Q ; 1.930             ;
+; Game:game1|Debouncer:debounce|D_FF:D_FF1|Q                                 ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:0:twox|Q ; 1.930             ;
+; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:1:twox|Q ; Game:game1|CounterCheck:checker1|DelayAdder:counter1|D_FF:\random:1:twox|Q ; 1.912             ;
+; Game:game1|DelayAdder:da|D_FF:\random:7:twox|Q                             ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q                            ; 1.307             ;
+; Game:game1|DelayAdder:da|D_FF:\random:6:twox|Q                             ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q                            ; 1.307             ;
+; Game:game1|DelayAdder:da|D_FF:\random:5:twox|Q                             ; Game:game1|DelayAdder:da|D_FF:\random:10:twox|Q                            ; 1.307             ;
++----------------------------------------------------------------------------+----------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 20 path(s) that have the largest delay added for hold.
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (119006): Selected device 5M1270ZT144C5 for design "ReactionGame"
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
+Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info (176445): Device 5M240ZT144C5 is compatible
+    Info (176445): Device 5M240ZT144I5 is compatible
+    Info (176445): Device 5M570ZT144C5 is compatible
+    Info (176445): Device 5M570ZT144I5 is compatible
+    Info (176445): Device 5M1270ZT144I5 is compatible
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ReactionGame.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained base clocks found in the design
+Info (332128): Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
+    Info (332127): Assuming a default timing requirement
+Info (332111): Found 2 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):    1.000  masterclock
+    Info (332111):    1.000       reset1
+Info (186079): Completed User Assigned Global Signals Promotion Operation
+Info (186216): Automatically promoted some destinations of signal "masterclock" to use Global clock in PIN 89 File: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd Line: 591
+    Info (186217): Destination "Game:game1|GameOverFSM:gameisover1|clk1" may be non-global or may not use global clock File: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd Line: 370
+Info (186215): Automatically promoted signal "oneclock:oonclk|dbtwo:\Q1:15:dbtwox|outclk" to use Global clock File: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd Line: 95
+Info (186215): Automatically promoted signal "Game:game1|addclock" to use Global clock File: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd Line: 318
+Info (186215): Automatically promoted signal "Game:game1|clkin2" to use Global clock File: /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/ReactionGame.vhd Line: 318
+Info (186079): Completed Auto Global Promotion Operation
+Info (176234): Starting register packing
+Info (186468): Started processing fast register assignments
+Info (186469): Finished processing fast register assignments
+Info (176235): Finished register packing
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
+Info (170189): Fitter placement preparation operations beginning
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info (170191): Fitter placement operations beginning
+Info (170137): Fitter placement was successful
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170193): Fitter routing operations beginning
+Info (170089): 3e+02 ns of routing delay (approximately 4.2% of available device routing delay) has been added to meet hold timing. For more information, refer to the Estimated Delay Added for Hold Timing section in the Fitter report.
+Info (170195): Router estimated average interconnect usage is 8% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 10% of the available device resources in the region that extends from location X0_Y0 to location X8_Y11
+Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
+    Info (170201): Optimizations that may affect the design's routability were skipped
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (11888): Total time spent on timing analysis during the Fitter is 0.31 seconds.
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
+Info (144001): Generated suppressed messages file /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/output_files/ReactionGame.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 1268 megabytes
+    Info: Processing ended: Fri Apr 20 21:17:27 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++----------------------------+
+; Fitter Suppressed Messages ;
++----------------------------+
+The suppressed messages can be found in /home/dimple/Downloads/Second Year- Second Semester/EE 214- Digital Lab/ReactionGame/output_files/ReactionGame.fit.smsg.
+
+

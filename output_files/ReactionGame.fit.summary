@@ -1,0 +1,11 @@
+Fitter Status : Successful - Fri Apr 20 21:17:27 2018
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : ReactionGame
+Top-level Entity Name : ReactionGame
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 293 / 1,270 ( 23 % )
+Total pins : 30 / 114 ( 26 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
